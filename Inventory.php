@@ -14,7 +14,7 @@ class Inventory extends Connection {
     public $InventoryNo;
     public $Quantity;
     public $UnitPrice;
-    //put your code here
+    // Using parent constructor function
     function __construct() {
         parent::__construct();
     }
@@ -35,6 +35,7 @@ class Inventory extends Connection {
             ":quantity" => $quantity,
             ":inventoryNo" => $this->InventoryNo
         ));
+        // Refresh Inventory table
         $this->getByInventoryNumber($this->InventoryNo);
     }    
     
