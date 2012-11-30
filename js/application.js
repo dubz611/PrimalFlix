@@ -4,6 +4,7 @@
     }).ajaxStop(function() {
             $(this).fadeOut();
     });
+    var vendorSelect = $('select#vendors');
     $.ajax({
         type: "POST",
         data: {
@@ -11,7 +12,10 @@
         },
         beforeSend: function(jqXHR, settings) {},
         success: function(response, textStatus, jqXHR) {
-            alert(JSON.stringify(response));
+            $.each(response.vendors,function(index,vendor) {
+                $('<option />').html(vendor.VendorName).val(vendor.VendorNo);
+            });
+            // alert(JSON.stringify(response));
             
         },
         complete: function(jqXHR, textStatus) {

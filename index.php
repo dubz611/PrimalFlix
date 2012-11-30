@@ -23,5 +23,6 @@
             $vendors = getAllVendors();
         // put your code here
         ?>
+        <select name="vendors" id="vendors" />
     </body>
 </html>
