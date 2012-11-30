@@ -10,12 +10,12 @@
             service: "getAllVendors"
         },
         beforeSend: function(jqXHR, settings) {},
-        success: function(CellPhoneVerifyResponse, textStatus, jqXHR) {
-            self._stateInfo.ForceCellPhoneVerify = CellPhoneVerifyResponse.forceVerify;
+        success: function(response, textStatus, jqXHR) {
+            alert(JSON.stringify(response));
+            
         },
         complete: function(jqXHR, textStatus) {
-            self._buildDisplay(self.getUrlVars().display);
-            $.unblockUI();
+            
         }
     });
 

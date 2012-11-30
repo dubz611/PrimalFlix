@@ -11,17 +11,15 @@
  *
  * @author Weezy
  */
-    private $params;
     function invokeService($params) {
-        $this->params = $params;
-        if (isset($this->params['service'])) {
-            if (isset($this->params['request'])) {
-                $this->request = json_decode($this->params['request']);
+        if (isset($params['service'])) {
+            if (isset($params['request'])) {
+                $request = json_decode($params['request']);
             }
             header('Content-type: application/json');
-            switch ($this->params['service']) {
+            switch ($params['service']) {
                 case "getAllVendors": 
-                    echo json_encode((object) array('vendors' => $this->getAllVendors()));
+                    echo json_encode((object) array('vendors' => getAllVendors()));
                     break;
             }
             exit;
