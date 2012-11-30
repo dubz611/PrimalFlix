@@ -14,6 +14,9 @@ class Vendor extends Connection {
     public $VendorNo;
     public $VendorName;
     public $AccountNo;  
+    function __construct() {
+        parent::__construct();
+    }
     //put your code here
 }
 
