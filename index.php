@@ -2,7 +2,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <title>Flunkbuster</title>
+        <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+        <script type='text/javascript'>
+            if (window.google && window.google.load) {
+                google.load('jquery', '1.6.1');
+                google.load('jqueryui', '1.8.13');
+            }            
+        </script>
     </head>
     <body>
         <?php
