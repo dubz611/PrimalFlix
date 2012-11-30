@@ -1,3 +1,6 @@
+<?php
+    require_once 'VendorService.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,6 +16,7 @@
     </head>
     <body>
         <?php
+            $vendors = getAllVendors();
         // put your code here
         ?>
     </body>
