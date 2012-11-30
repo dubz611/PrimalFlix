@@ -1,5 +1,8 @@
 <?php
     require_once 'VendorService.php';
+    $params = array_merge($_GET, $_POST);
+    // Invoke the services module in case there's a service request
+    $vendorServices->invokeService($params);    
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,6 +16,7 @@
                 google.load('jqueryui', '1.8.13');
             }            
         </script>
+        <script type='text/javascript' src='js/application.js'></script>
     </head>
     <body>
         <?php
