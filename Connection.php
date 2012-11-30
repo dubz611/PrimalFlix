@@ -15,6 +15,7 @@ class Connection {
     public $settings;
     public function __construct() {
         $this->settings = parse_ini_file("settings.ini", true);
+        // Use PDO library
         $this->dbh = new PDO(
             $this->settings['connection']['dsn'], 
             $this->settings['connection']['user'], 
