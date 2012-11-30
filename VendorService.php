@@ -29,7 +29,8 @@
         $vendor = new Vendor();
         $SQL="SELECT * FROM Vendor";
         $sth = $vendor->dbh->prepare($SQL);
-        $sth->setFetchMode( PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Vendor');
+        // $sth->setFetchMode( PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Vendor');
+        $sth->setFetchMode( PDO::FETCH_CLASS, 'Vendor');
         $sth->execute();
         return $sth->fetchAll();        
     }

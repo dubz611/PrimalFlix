@@ -12,7 +12,7 @@
  */
 class Connection {
     public $dbh;
-    public $settings;
+    private $settings;
     public function __construct() {
         $this->settings = parse_ini_file("settings.ini", true);
         // Use PDO library
