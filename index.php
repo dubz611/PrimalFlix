@@ -1,5 +1,5 @@
 <?php
-    require_once 'VendorService.php';
+    require_once 'service.php';
     $params = array_merge($_GET, $_POST);
     // Invoke the services module in case there's a service request
     invokeService($params);    
