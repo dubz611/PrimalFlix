@@ -16,7 +16,6 @@ class Connection {
     
     public function __construct() {
         $this->settings = parse_ini_file("settings.ini", true);  //Creates associative array from settings.ini
-        print_r($this->settings);
         // Create new PDO array
         $this->dbh = new PDO(
             $this->settings['connection']['dsn'], 

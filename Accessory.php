@@ -22,7 +22,7 @@ class Accessory extends Connection {
     
     function __construct() {
         parent::__construct();
+    }
 }
 // place code
-
 ?>
