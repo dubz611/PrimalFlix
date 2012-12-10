@@ -18,6 +18,7 @@ class Vendor extends Connection {
         parent::__construct();
     }
     //put your code here
+    
 }
 
 ?>
