@@ -8,17 +8,86 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Flunkbuster</title>
+        <title>PrimalFlix - The world's #1 source for DVD, Blu-Ray, & Games!</title>
         <script type='text/javascript' src='https://www.google.com/jsapi'></script>
         <script type='text/javascript'>
             if (window.google && window.google.load) {
                 google.load('jquery', '1.6.1');
                 google.load('jqueryui', '1.8.13');
-            }            
+            } 
         </script>
         <script type='text/javascript' src='js/application.js'></script>
+            <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+            <link rel="stylesheet" href="/resources/demos/style.css" /> 
+        <script src="jqbanner.js" type="text/javascript"></script>
+            <link rel="stylesheet" type="text/css" media="screen" href="jqbanner.css" />
+    
+    <!-- JQuery tabs -->
+    <style>
+        p {font-size:50%;}
+        a {font-size:50%;}
+    </style>
+    <script>
+    $(function() {
+        $( "#tabs" ).tabs({
+            event: "mouseover"
+        });
+    });
+    </script>
     </head>
-    <body>
+    <body> 
+        <img src ="img/pflogo2.png">
+        <br /><br />
+        <div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">DVD</a></li>
+        <li><a href="#tabs-2">Blu-Ray</a></li>
+        <li><a href="#tabs-3">Game</a></li>
+        <li><a href="#tabs-4">Accessory</a></li>
+        <li><a href="#tabs-5">Membership</a></li>
+    </ul>
+    <div id="tabs-1">
+        <p>DVD links go here...</p>
+    </div>
+    <div id="tabs-2">
+        <p>Blu-Ray links go here...</p>
+    </div>
+    <div id="tabs-3">
+        <p>Game links go here...</p>
+    </div>
+    <div id="tabs-4">
+        <p>Accessory links go here...</p>
+    </div>
+    <div id="tabs-5">
+        <p>Membership links go here...</p>
+    </div>
+        </div>
+        <br /><br />
+  
+    <!-- JQuery Photo Slider -->
+    <center>        
+        <div id="jqb_object">
+
+        <div class="jqb_slides">
+        <div class="jqb_slide" title="slide title" ><a href="index.php"><img src="img/pflogo.png"/></a></div>
+        <div class="jqb_slide" title="slide title" ><a href="slide link"><img src="img/2.gif"/></a></div>
+        <div class="jqb_slide" title="slide title"><a href="slide link"><img src="img/3.gif"/></a></div>
+        <div class="jqb_slide" title="slide title"><a href="slide link"><img src="img/1.gif"/></a></div>
+        <div class="jqb_slide" title="slide title" ><span>TEXT SLIDE IN DIV</span></div></div>
+
+        <div class="jqb_bar">
+        <div class="jqb_info"></div>
+        <div id="btn_next" class="jqb_btn jqb_btn_next"></div>
+        <div id="btn_pauseplay" class="jqb_btn jqb_btn_pause"></div>
+        <div id="btn_prev" class="jqb_btn jqb_btn_prev"></div>
+        </div>
+    
+        </div>
+    </center>
+    
+    
         <?php
             $vendors = getAllVendors();
         // put your code here
