@@ -64,10 +64,12 @@
         <p>Membership links go here...</p>
     </div>
         </div>
-        <br /><br />
+        <br />
   
     <!-- JQuery Photo Slider -->
     <center>        
+        <h3 style="font-family:verdana;">FREE SHIPPING - Towards all DVDs, Blu-Rays, and Games!</h3>
+        
         <div id="jqb_object">
 
         <div class="jqb_slides">
