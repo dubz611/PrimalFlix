@@ -8,7 +8,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>PrimalFlix - The world's #1 source for DVD, Blu-Ray, & Games!</title>
+        <title>PrimalFlix - How do you like me now ?!?</title>
         <script type='text/javascript' src='https://www.google.com/jsapi'></script>
         <script type='text/javascript'>
             if (window.google && window.google.load) {
@@ -23,11 +23,12 @@
             <link rel="stylesheet" href="/resources/demos/style.css" /> 
         <script src="jqbanner.js" type="text/javascript"></script>
             <link rel="stylesheet" type="text/css" media="screen" href="jqbanner.css" />
+            <link href='http://fonts.googleapis.com/css?family=Rambla' rel='stylesheet' type='text/css'>
     
     <!-- JQuery tabs -->
     <style>
-        p {font-size:50%;}
-        a {font-size:50%;}
+        p {font-family: 'Rambla', sans-serif; font-size:75%;}
+        a {font-family: 'Rambla', sans-serif; font-size:75%;}
     </style>
     <script>
     $(function() {
@@ -44,31 +45,43 @@
     <ul>
         <li><a href="#tabs-1">DVD</a></li>
         <li><a href="#tabs-2">Blu-Ray</a></li>
-        <li><a href="#tabs-3">Game</a></li>
+        <li><a href="#tabs-3">Video Games</a></li>
         <li><a href="#tabs-4">Accessory</a></li>
         <li><a href="#tabs-5">Membership</a></li>
     </ul>
     <div id="tabs-1">
-        <p>DVD links go here...</p>
+        <a href="dvd_newrelease.html">New Releases</a>
+        <a href="dvd_action.html">Action</a>
+        <a href="dvd.html">Comedy</a>
+        <a href="dvd.html">Suspense</a>
     </div>
     <div id="tabs-2">
-        <p>Blu-Ray links go here...</p>
+        <a href="bray_newrelease.html">New Releases</a>
+        <a href="bray_action.html">Action</a>
+        <a href="bray.html">Comedy</a>
+        <a href="bray.html">Suspense</a>
     </div>
     <div id="tabs-3">
-        <p>Game links go here...</p>
+        <a href="xbox360.html">XBOX 360</a>
+        <a href="playstation3.html">Sony Playstation 3</a>
     </div>
     <div id="tabs-4">
-        <p>Accessory links go here...</p>
+        <a href="acc_systems.html">Game Systems</a>
+        <a href="acc_game.html">Game Accessories</a>
+        <a href="acc_player.html">DVD & Blu-Ray players</a>
+        <a href="acc_home.html">Home Accessories</a>
     </div>
     <div id="tabs-5">
-        <p>Membership links go here...</p>
+        <a href="member_join.html">Join Us Today!</a>
+        <a href="member_benefit.html">Benefits</a>
+        <a href="member_promo.html">Promotions</a>
     </div>
         </div>
         <br />
   
     <!-- JQuery Photo Slider -->
     <center>        
-        <h3 style="font-family:verdana;">FREE SHIPPING - Towards all DVDs, Blu-Rays, and Games!</h3>
+        <h3 style="font-family: 'Rambla', sans-serif;">FREE SHIPPING - on everything at PrimalFlix.com!</h3>
         
         <div id="jqb_object">
 
