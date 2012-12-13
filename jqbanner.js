@@ -85,8 +85,8 @@ jQuery(document).ready(function() {
 		}
 	});
 	
-	
-	$("#jqb_object").find(".jqb_slide").mouseover(function() {
+	// Deactivate mouseover function
+	/*$("#jqb_object").find(".jqb_slide").mouseover(function() {
 		if(!jqb_vIsPause){
 			clearInterval(jqb_intInterval);
 		}
@@ -96,7 +96,7 @@ jQuery(document).ready(function() {
 		if(!jqb_vIsPause){
 			jqb_fnChange();
 		}
-	});
+	}); */
 		
 });
 
