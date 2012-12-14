@@ -6,49 +6,73 @@
         
 */
 
-.rambia {font-family: "Rambla", sans-serif; 
-        font-size:75%;}
+.rambia {
+    font-family: "Rambla", sans-serif; 
+    font-size:75%;
+}
 
-.rambia2 {font-family: "Rambla", sans-serif; 
-         font-size:150%; 
-         background-color:#CCCCCC; 
-         border-radius:10px; 
-         opacity:0.70;}
-        
-h3 b {font-size:150%; 
-      color:#cd0a0a;}
+.rambia2 {
+    font-family: "Rambla", sans-serif; 
+    font-size:150%; 
+    background-color:#CCCCCC; 
+    border-radius:10px; 
+    opacity:0.70;
+}
 
-div.title {font-family: "Rambla", sans-serif;
-       text-align: center; 
-       font-size:80%; 
-       font-weight:normal;}
-        
-div a {font-family: "Rambla", sans-serif; 
-       font-size:75%;}
-div a:hover {background:#CCCCCC; 
-       border-radius:1px;}
-        
-li a {font-family: "Rambla", sans-serif; 
-      font-size:90%;}
-        
-p {font-family: "Rambla", sans-serif; 
-   font-size:75%;}
+h3 b {
+    font-size:150%; 
+    color:#cd0a0a;
+}
 
-p.title {font-family: "Rambla", sans-serif; 
-       font-size:85%;}
-        
-a {font-family: "Rambla", sans-serif; 
-   font-size:75%;}
-        
-table {border:1px solid; 
-       border-collapse:separate; 
-       border-radius:10px; 
-       border-color:#CCCCCC;}
-        
-th {padding:40px;}
+div.title {
+    font-family: "Rambla", sans-serif;   
+    text-align: center;
+    font-size:80%; 
+    font-weight:normal;
+} 
 
-body {margin-left:150px; 
-      margin-right:150px;}
+div a {
+    font-family: "Rambla", sans-serif; 
+    font-size:75%;
+}
+div a:hover {
+    background:#CCCCCC; 
+    border-radius:1px;
+}        
+li a {
+    font-family: "Rambla", sans-serif; 
+    font-size:90%;
+}
+
+p {
+    font-family: "Rambla", sans-serif; 
+    font-size:75%;
+}
+
+p.title {
+    font-family: "Rambla", sans-serif; 
+    font-size:85%;
+}
+a {
+    font-family: "Rambla", sans-serif; 
+    font-size:75%;
+}
+
+table {
+    border:1px solid; 
+    border-collapse:separate; 
+    border-radius:10px; 
+    border-color:#CCCCCC;
+}
+
+th {
+    padding:40px;
+}
+
+body {
+    margin-left:150px; 
+    margin-right:150px;
+}
 
 
 
