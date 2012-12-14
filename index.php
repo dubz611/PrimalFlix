@@ -8,7 +8,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>PrimalFlix - Development</title>
+        <title>PrimalFlix - DEVELOPMENT (Home Page)</title>
         <script type='text/javascript' src='https://www.google.com/jsapi'></script>
         <script type='text/javascript'>
             if (window.google && window.google.load) {
@@ -30,16 +30,9 @@
         <script type="text/javascript" src="widget/lib/jquery.ui.widget.min.js"></script>-->
         <script type="text/javascript" src="widget/lib/jquery.ui.rlightbox.min.js"></script>
             <link type="text/css" rel="stylesheet" href="widget/css/lightbox.min.css" />
+            <link type="text/css" rel="stylesheet" href="pf.css" /> <!-- main css -->
     
-    <!-- JQuery tabs (JQueryUI tab) -->
-    <style> 
-        .rambia {font-family: 'Rambla', sans-serif; font-size:75%;}
-        h3 b {font-size:150%; color:#cd0a0a}
-        p {font-family: "Rambla", sans-serif; font-size:75%;}
-        a {font-family: "Rambla", sans-serif; font-size:75%;}
-        table { border-collapse:separate; border-spacing: 100px; border-radius:10px;}
-        th {border:none}
-    </style>
+    <!-- JQueryUI tabs (JQueryUI tab) -->
     <script>
     $(function() {
         $( "#tabs" ).tabs({
@@ -48,7 +41,7 @@
     });
     </script>
     </head>
-    <body> 
+    <body>
         <a href="index.php"><img src ="img/pflogo2.png"></a>
         <br /><br />
         <div id="tabs">
@@ -89,7 +82,7 @@
         <a href="member_promo.html">Promotions</a>
     </div>
         </div>
-        <br />
+        
   
     <!-- JQuery Photo Slider (jqslider) -->
     <center>        
@@ -113,27 +106,36 @@
     
     <!-- JQuery Video Box (rlightbox) -->
     <!-- Will be working with this plugin for DVD, Blu-Ray, & Video Games page -->
-    <table border="1">
-    <tr>
-        <th><a href="http://www.youtube.com/watch?v=SlSWCnNRfeM" title="Watch the trailer!" class="lb_youtube"><img src ="img/darkknight.jpg"></a></th>
-        <th><a href="http://www.youtube.com/watch?v=C05pGnZQQtE" title="Watch the trailer!" class="lb_youtube"><img src ="img/madaga3.jpg"></a></th>
-        <th><a href="http://www.youtube.com/watch?v=Pxzb3bHHu2Q" title="Watch the trailer!" class="lb_youtube"><img src ="img/expend2.jpg"></a></th>
-        <th><a href="http://www.youtube.com/watch?v=IyaFEBI_L24" title="Watch the trailer!" class="lb_youtube"><img src ="img/mib3.jpg"></a></th>
+    <table>
+    <tr><th colspan="4" class="rambia2"><u>New Releases</u></th>
     </tr>
     <tr>
-        <th><a href="http://www.youtube.com/watch?v=m_6ksxHBklo" title="Watch the trailer!" class="lb_youtube"><img src ="img/safe.jpg"></a></th>
-        <th><a href="http://www.youtube.com/watch?v=sAsGhDMlZjQ" title="Watch the trailer!" class="lb_youtube"><img src ="img/prometheus.jpg"></a></th>
-        <th><a href="http://www.youtube.com/watch?v=CBIGWu0rAHI" title="Watch the trailer!" class="lb_youtube"><img src ="img/spiderman.jpg"></a></th>
-        <th><a href="http://www.youtube.com/watch?v=Pp9xuquibQc" title="Watch the trailer!" class="lb_youtube"><img src ="img/chernobyl.jpg"></a></th>
+        <th><a href="http://www.youtube.com/watch?v=SlSWCnNRfeM" title="The Dark Knight Rises" class="lb_youtube"><img src ="img/darkknight.jpg"></a>
+        <div class="title">The Dark Knight Rises</div></th>
+        <th><a href="http://www.youtube.com/watch?v=C05pGnZQQtE" title="Madagascar 3" class="lb_youtube"><img src ="img/madaga3.jpg"></a>
+        <div class="title">Madagascar 3</div></th>
+        <th><a href="http://www.youtube.com/watch?v=Pxzb3bHHu2Q" title="The Expendables 2" class="lb_youtube"><img src ="img/expend2.jpg"></a>
+        <div class="title">The Expendables 2</div></th>
+        <th><a href="http://www.youtube.com/watch?v=IyaFEBI_L24" title="Men In Black 3" class="lb_youtube"><img src ="img/mib3.jpg"></a>
+        <div class="title">Men in Black 3</div></th>
+    </tr>
+    <tr> 
+        <th><a href="http://www.youtube.com/watch?v=m_6ksxHBklo" title="Safe" class="lb_youtube"><img src ="img/safe.jpg"></a>
+        <div class="title">Safe</div></th>
+        <th><a href="http://www.youtube.com/watch?v=sAsGhDMlZjQ" title="Prometheus" class="lb_youtube"><img src ="img/prometheus.jpg"></a>
+        <div class="title">Prometheus</div></th>
+        <th><a href="http://www.youtube.com/watch?v=CBIGWu0rAHI" title="The Amazing Spiderman" class="lb_youtube"><img src ="img/spiderman.jpg"></a>
+        <div class="title">The Amazing Spiderman</div></th>
+        <th><a href="http://www.youtube.com/watch?v=Pp9xuquibQc" title="Chernobyl Diaries" class="lb_youtube"><img src ="img/chernobyl.jpg"></a>
+        <div class="title">Chernobyl Diaries</div></th>
     </tr>
     </table></center>
     
         <script type="text/javascript">
             jQuery(function($) {
-            $( ".lb_youtube" ).rlightbox();
+            $( ".lb_youtube" ).rlightbox({overwriteTitle: "True"});
         });
         </script>
-        
         <?php
             $vendors = getAllVendors();
         // put your code here
