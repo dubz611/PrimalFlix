@@ -6,13 +6,17 @@
         
 */
 
-.rambia {
-    font-family: "Rambla", sans-serif; 
+body {
+    font-family: "Rambla", sans-serif;
+    margin-left:150px; 
+    margin-right:150px;
+}
+
+.rambia, div a, p, a { 
     font-size:75%;
 }
 
 .rambia2 {
-    font-family: "Rambla", sans-serif; 
     font-size:150%; 
     background-color:#CCCCCC; 
     border-radius:10px; 
@@ -24,38 +28,22 @@ h3 b {
     color:#cd0a0a;
 }
 
-div.title {
-    font-family: "Rambla", sans-serif;   
+div.title {   
     text-align: center;
     font-size:80%; 
     font-weight:normal;
-} 
-
-div a {
-    font-family: "Rambla", sans-serif; 
-    font-size:75%;
 }
+
 div a:hover {
     background:#CCCCCC; 
     border-radius:1px;
 }        
-li a {
-    font-family: "Rambla", sans-serif; 
+li a { 
     font-size:90%;
 }
 
-p {
-    font-family: "Rambla", sans-serif; 
-    font-size:75%;
-}
-
 p.title {
-    font-family: "Rambla", sans-serif; 
     font-size:85%;
-}
-a {
-    font-family: "Rambla", sans-serif; 
-    font-size:75%;
 }
 
 table {
@@ -67,11 +55,6 @@ table {
 
 th {
     padding:40px;
-}
-
-body {
-    margin-left:150px; 
-    margin-right:150px;
 }
 
 
