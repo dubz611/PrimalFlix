@@ -31,58 +31,21 @@
         <script type="text/javascript" src="widget/lib/jquery.ui.rlightbox.min.js"></script>
             <link type="text/css" rel="stylesheet" href="widget/css/lightbox.min.css" />
             <link type="text/css" rel="stylesheet" href="pf.css" /> <!-- main css -->
-    
-    <!-- JQueryUI tabs (JQueryUI tab) -->
-    <script>
-    $(function() {
-        $( "#tabs" ).tabs({
-            event: "mouseover"
-        });
-    });
-    </script>
     </head>
     <body>
         <a href="index.php"><img src ="img/pflogo2.png"></a>
         <br /><br />
-        <div id="tabs">
-    <ul>
-        <li><a href="#tabs-1">DVD</a></li>
-        <li><a href="#tabs-2">Blu-Ray</a></li>
-        <li><a href="#tabs-3">Video Games</a></li>
-        <li><a href="#tabs-4">Accessory</a></li>
-        <li><a href="#tabs-5">Membership</a></li>
+    <ul class="solidblockmenu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="dvd_newrelease.html">DVD</a></li>
+    <li><a href="bray_newrelease.html">Blu-Ray</a></li>
+    <li><a href="xbox.html">Video Games</a></li>
+    <li><a href="accessory.html">Accessory</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li class="right"><a href="shoppingcart.html">Cart</a></li>
+    <li class="right"><a href="signin.html">Sign-In</a></li>
     </ul>
-    <div id="tabs-1">
-        <a href="dvd_newrelease.html">New Releases</a>
-        <a href="dvd_action.html">Action</a>
-        <a href="dvd.html">Comedy</a>
-        <a href="dvd.html">Suspense</a>
-    </div>
-    <div id="tabs-2">
-        <a href="bray_newrelease.html">New Releases</a>
-        <a href="bray_action.html">Action</a>
-        <a href="bray.html">Comedy</a>
-        <a href="bray.html">Suspense</a>
-    </div>
-    <div id="tabs-3">
-        <a href="xbox360.html">XBOX 360</a>
-        <a href="playstation3.html">Sony Playstation 3</a>
-        <a href="wiiu.html">Nintendo Wii U</a>
-        <a href="pc.html">PC</a>
-    </div>
-    <div id="tabs-4">
-        <a href="acc_systems.html">Game Systems</a>
-        <a href="acc_game.html">Game Accessories</a>
-        <a href="acc_player.html">DVD & Blu-Ray Players</a>
-        <a href="acc_home.html">Other Accessories</a>
-    </div>
-    <div id="tabs-5">
-        <a href="member_join.html">Join Us</a>
-        <a href="member_benefit.html">Benefits</a>
-        <a href="member_promo.html">Promotions</a>
-    </div>
-        </div>
-        
+    <br style="clear: left" />
   
     <!-- JQuery Photo Slider (jqslider) -->
     <center>        
@@ -131,7 +94,7 @@
     </tr>
     </table></center>
     
-        <script type="text/javascript">
+        <script>
             jQuery(function($) {
             $( ".lb_youtube" ).rlightbox({overwriteTitle: "True"});
         });
