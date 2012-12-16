@@ -10,6 +10,7 @@ body {
     font-family: "Rambla", sans-serif;
     margin-left:200px; 
     margin-right:200px;
+    position: absolute;
 }
 
 .rambia, div a, p, a { 
@@ -17,9 +18,10 @@ body {
 }
 
 .rambia2 {
-    font-size:150%; 
-    background-color:#2E8AE6; 
-    border-radius:10px; 
+    font-size:125%; 
+    background-color:#A9D0F5;
+    height:1px;
+    padding:0px;
     opacity:0.85;
 }
 
@@ -28,7 +30,7 @@ h3 b {
     color:#cd0a0a;
 }
 
-div.title {   
+div.title {  
     text-align:center;
     font-size:80%; 
     font-weight:normal;
@@ -45,8 +47,7 @@ p.title {
 
 table {
     border:1px solid; 
-    border-collapse:separate; 
-    border-radius:10px; 
+    border-collapse:separate;  
     border-color:#CCCCCC;
 }
 
