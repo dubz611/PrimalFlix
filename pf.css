@@ -8,9 +8,12 @@
 
 body {
     font-family: "Rambla", sans-serif;
-    margin-left:200px; 
-    margin-right:200px;
-    position: absolute;
+}
+
+#container {
+    position: static;
+    width: 800px; 
+    margin: auto;
 }
 
 .rambia, div a, p, a { 
@@ -18,11 +21,12 @@ body {
 }
 
 .rambia2 {
-    font-size:125%; 
+    font-size:125%;
+    border: 2px solid;
+    border-color: black #444 #888 #ccc;
     background-color:#A9D0F5;
     height:1px;
-    padding:0px;
-    opacity:0.85;
+    padding:0px;   
 }
 
 h3 b {
@@ -46,13 +50,22 @@ p.title {
 }
 
 table {
-    border:1px solid; 
-    border-collapse:separate;  
-    border-color:#CCCCCC;
+    border: 2px solid;
+    border-color: black #444 #888 #ccc;
 }
 
 th {
     padding:40px;
+}
+
+#footer {
+    clear: left;
+    background: #ccc;
+}
+
+#footer p {
+    font-size: 65%;
+    margin: 0;
 }
 
 /* Begin Solid block menu */
@@ -90,7 +103,9 @@ color: white;
 background: transparent url(img/blockactive.gif) center center repeat-x;
 }
 
-.right {float:right;}
+.right {
+    float:right;
+}
 /* End Solid block menu */
 
 
