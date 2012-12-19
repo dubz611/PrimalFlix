@@ -37,7 +37,7 @@ invokeService($params);
 
         <!-- Solid Block menu -->   
         <ul class="solidblockmenu">
-            <li><a href="index.php">HOME</a></li>
+            <li class="menu"><a href="index.php">HOME</a></li>
             <li><a href="dvd_newrelease.html">DVD</a></li>
             <li><a href="bray_newrelease.html">BLU-RAY</a></li>
             <li><a href="games.html">VIDEO GAMES</a></li>
@@ -46,19 +46,31 @@ invokeService($params);
             <li class="right"><a href="shoppingcart.html">CART</a></li>
             <li class="right"><a href="login.html">SIGN-IN</a></li>
         </ul>
+        <ul><li><div id="submenu">hello</div></li></ul>
         <br style="clear: left" />
         
+        <script>
+            $(function() {
+                $('#submenu').hide();
+                $('.menu').hover(function() {
+                $('#submenu').show();
+            },  function() {
+                $('#submenu').hide();
+            }); // end hover
+            });
+        </script>
+        
         <!-- JQuery Banner Slider (jqslider) -->
-        <center>        
+        <center><br /><br />       
         <h3><b>FREE SHIPPING</b> - on everything at PrimalFlix.com!</h3>
 
         <div id="jqb_object">
 
             <div class="jqb_slides">
-                <div class="jqb_slide" title="Madagascar 3 - Now on Blu-Ray & DVD" ><a href="index.php"><img src="img/madag3_banner.jpg"/></a></div>
-                <div class="jqb_slide" title="PS3 - Long Live Play" ><a href="slide link"><img src="img/ps3banner.jpg"/></a></div>
-                <div class="jqb_slide" title="COD Black Ops 2 - Now Available"><a href="slide link"><img src="img/blackop2.jpg"/></a></div>
-                <div class="jqb_slide" title="slide title"><a href="slide link"><img src="img/1.gif"/></a></div>
+                <div class="jqb_slide" title="Madagascar 3 - Now on Blu-Ray & DVD" ><a href="bray_newrelease.html"><img src="img/madag3_banner.jpg"/></a></div>
+                <div class="jqb_slide" title="PS3 - Long Live Play" ><a href="games.html"><img src="img/ps3banner.jpg"/></a></div>
+                <div class="jqb_slide" title="COD Black Ops 2 - Now Available"><a href="games.html"><img src="img/blackop2.jpg"/></a></div>
+                <div class="jqb_slide" title="slide title"><a href="bray_newrelease.html"><img src="img/1.gif"/></a></div>
             </div>
 
             <div class="jqb_bar">

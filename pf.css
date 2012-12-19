@@ -34,7 +34,7 @@ h3 b {
     color:#cd0a0a;
 }
 
-div.title {  
+th .title {  
     text-align:center;
     font-size:80%; 
     font-weight:normal;
@@ -43,10 +43,6 @@ div.title {
 li a { 
     font-family: "Rambla", sans-serif;
     font-size:120%;
-}
-
-p.title {
-    font-size:85%;
 }
 
 table {
@@ -105,6 +101,23 @@ background: transparent url(img/blockactive.gif) center center repeat-x;
 
 .right {
     float:right;
+}
+
+.class {
+    position: relative;
+}
+
+#submenu { 
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 10px;
+    background-color:rgb(195,151,51);
+    font-style: italic;
+    color: rgb(255,255,255);
+    position: absolute;
+    left: 300px;
+    top: 100px;
 }
 /* End Solid block menu */
 
