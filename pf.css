@@ -6,8 +6,6 @@
         
 */
 
-
-
 body, h3 {
     font-family: "Rambla", sans-serif;
     text-align: center;
@@ -29,14 +27,14 @@ body, h3 {
 
 #header {
     text-align: left; 
-    position: static;
+    position: relative;
     width: 800px; 
     margin: auto;
 }
 
 #container {
     text-align: center;
-    position: static;
+    position: relative;
     width: 800px; 
     margin: auto;
 }
@@ -49,18 +47,40 @@ body, h3 {
     margin: auto;
     right: 232px;
     top: 55px;
+    display: inline;
+}
+
+#newreleases {
+    background-color: #F2F2F2;
 }
 
 .rambia, div a, p, a { 
     font-size:75%;
 }
 
-.rambia2 {
+.under
+{
+    position:absolute;
+    right:200px;
+    top:5px;
+    z-index:1;
+}
+.over
+{
+    position:absolute;
+    right:232px;
+    top:65px;
+    z-index:2;
+    background-color: lightgrey;
+    font-style: italic;
+    padding: 3px;
+}
+
+.newreleases_title {
     text-align: center;
-    border: 2px solid;
-    border-color: black #444 #888 #ccc;
-    height:85px;
-    padding:0px;
+    border: 0;
+    height: 85px;
+    padding: 10px 0 0 0;
     margin: auto;
 }
 
@@ -70,23 +90,21 @@ h3 b {
 }
 
 .gallery img {
-        height: 150px;
-        width: 120px;
-	display: inline-block;
-        text-align: center;
-        margin: 0;
-	border: 0;
-        padding: 35px;
+    height: 150px;
+    width: 115px;
+    display: inline-block;
+    margin: 20px;
+    
 }
 
-.solidblockmenu, .jqb_center, .rambia2, .gallery img {
-    margin-left:auto;
-    margin-right:auto;
+.solidblockmenu, .jqb_center {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 li a { 
     font-family: "Rambla", sans-serif;
-    font-size:120%;
+    font-size: 120%;
 }
 
 th {
@@ -97,12 +115,12 @@ th {
     position: absolute;
     right: 0;
     width:390px;
-    background: #ccc;
+    background: black;
 }
 
 #footer p {
-    text-align: left;
     
+    color: white;
     font-size: 75%;
     margin: 0;
 }

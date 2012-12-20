@@ -24,10 +24,9 @@ invokeService($params);
         <script src="jqbanner.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" media="screen" href="jqbanner.css" />
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rambla">
-        <script type="text/javascript" src="widget/lib/jquery.ui.rlightbox.min.js"></script>
-        <link type="text/css" rel="stylesheet" href="widget/css/lightbox.min.css" />
+        <link href="js/fancybox/jquery.fancybox.css?v=2.1.3" rel="stylesheet">
+        <script src="js/fancybox/jquery.fancybox.js"></script>
         <link type="text/css" rel="stylesheet" href="pf.css" /> <!-- main css -->
-
         <script src="js/jquery.easing.1.3.js"></script>
         <script src="js/jquery.color.js"></script>
         <script> // Side navigation
@@ -54,12 +53,10 @@ invokeService($params);
                 ); // end animate
                 }
             ); // end hover 
-                
             }); // end function
         </script>
-
-        <script>
-            $(document).ready(function(){
+        <script> // new releases covers
+            $(function(){
                 $('.gallery img').mouseover(function() {
                     
                     $(this).css('opacity', '0.5');
@@ -69,15 +66,34 @@ invokeService($params);
                 }); // end mouseout
             }); // end ready
         </script>
-
-        <script>
-            jQuery(function($) {
-                $( ".lb_youtube" ).rlightbox({overwriteTitle: "True"});
-            });
+        <script> // search bar
+            $(function() {
+                $('.over').focus(function() {
+                    $(this).val('');
+                    $(this).css('fontStyle','normal');
+                }); // end focus
+                $('.over').blur(function() {
+                    $(this).val('Search...');
+                    $(this).css('fontStyle','italic');
+                }); // end blur
+            }); // end function  
+        </script>  
+        <script> // Youtube player
+        $(document).ready(function() {
+            $(".youtube").fancybox({
+                openEffect : 'fade',
+                closeEffect : 'fade',
+                padding : 0,
+                helpers : {
+                    overlay : {
+                        css : {'background' : '#0099CC'}
+                    } }
+            }); // fancybox
+        }); // end ready 
         </script>
     </head>
-    <body>    
 
+    <body>    
         <div id="dashboard">
             <img src="img/blue_h.jpg" width="70" height="70" alt="blue">
             <img src="img/green_h.jpg" width="70" height="70" alt="green">
@@ -85,7 +101,8 @@ invokeService($params);
             <img src="img/purple_h.jpg" width="70" height="70" alt="purple">
             <img src="img/red_h.jpg" width="70" height="70" alt="red">
         </div>
-        <div><input id="search" type="text" name="search" value="Search"></div>
+        <img src="../PrimalFlix/img/penguin1.jpg" width="83" height="82" class="under"/>
+        <input type="text" name="search" value="Search..." class="over">
         <div id="header">
             <a href="index.php"><img src ="img/pflogo2.png" /></a></div>
         <div id="container">
@@ -100,11 +117,9 @@ invokeService($params);
                 <li class="right"><a href="shoppingcart.html">CART</a></li>
                 <li class="right"><a href="login.html">SIGN-IN</a></li>
             </ul><br /><br />
+            <div><h3><b>FREE SHIPPING</b> - on everything at PrimalFlix.com!</h3></div>
 
             <!-- JQuery Banner Slider (jqslider) -->
-
-            <h3><b>FREE SHIPPING</b> - on everything at PrimalFlix.com!</h3><br />
-
             <div id="jqb_object" class="jqb_center">
 
                 <div class="jqb_slides">
@@ -120,34 +135,33 @@ invokeService($params);
                     <div id="btn_prev"      class="jqb_btn jqb_btn_prev"></div>
                 </div></div><br /><br />
 
-            <!-- JQuery Video Box (rlightbox) -->
             <!-- Will be working with this plugin for DVD, Blu-Ray, & Video Games page -->
-
             <div id="newreleases">
-                <div class="rambia2"><img src ="img/newreleases.png"></div>
+                <div class="newreleases_title"><img src ="img/newreleases.png"></div>
+                <div>Click on a movie to watch it's trailer!</div>
                 <div class="gallery">
-                    <a href="http://www.youtube.com/watch?v=SlSWCnNRfeM" title="The Dark Knight Rises" class="lb_youtube"><img height="150" src ="img/darkknight.jpg"></a>
-                    <a href="http://www.youtube.com/watch?v=C05pGnZQQtE" title="Madagascar 3" class="lb_youtube"><img height="150" src ="img/madaga3.jpg"></a>
-                    <a href="http://www.youtube.com/watch?v=Pxzb3bHHu2Q" title="The Expendables 2" class="lb_youtube"><img height="150" src ="img/expend2.jpg"></a>
-                    <a href="http://www.youtube.com/watch?v=IyaFEBI_L24" title="Men In Black 3" class="lb_youtube"><img height="150" src ="img/mib3.jpg"></a>   
+                    <a href="http://www.youtube.com/embed/SlSWCnNRfeM?autoplay=1" class="youtube fancybox.iframe"><img src ="img/darkknight.jpg" /></a>
+                    <a href="http://www.youtube.com/embed/C05pGnZQQtE?autoplay=1" title="Madagascar 3" class="youtube fancybox.iframe"><img src ="img/madaga3.jpg" /></a>
+                    <a href="http://www.youtube.com/embed/Pxzb3bHHu2Q?autoplay=1" title="The Expendables 2" class="youtube fancybox.iframe"><img src ="img/expend2.jpg" /></a>
+                    <a href="http://www.youtube.com/embed/IyaFEBI_L24?autoplay=1" title="Men In Black 3" class="youtube fancybox.iframe"><img src ="img/mib3.jpg" /></a>   
                 </div>   
                 <div class="gallery">
-                    <a href="http://www.youtube.com/watch?v=m_6ksxHBklo" title="Safe" class="lb_youtube"><img height="150" src ="img/safe.jpg"></a>
-                    <a href="http://www.youtube.com/watch?v=sAsGhDMlZjQ" title="Prometheus" class="lb_youtube"><img height="150" src ="img/prometheus.jpg"></a>
-                    <a href="http://www.youtube.com/watch?v=CBIGWu0rAHI" title="The Amazing Spiderman" class="lb_youtube"><img height="150" src ="img/spiderman.jpg"></a>
-                    <a href="http://www.youtube.com/watch?v=Pp9xuquibQc" title="Chernobyl Diaries" class="lb_youtube"><img height="150" src ="img/chernobyl.jpg"></a>
+                    <a href="http://www.youtube.com/embed/m_6ksxHBklo?autoplay=1" title="Safe" class="youtube fancybox.iframe"><img src ="img/safe.jpg" /></a>
+                    <a href="http://www.youtube.com/embed/sAsGhDMlZjQ?autoplay=1" title="Prometheus" class="youtube fancybox.iframe"><img src ="img/prometheus.jpg" /></a>
+                    <a href="http://www.youtube.com/embed/CBIGWu0rAHI?autoplay=1" title="The Amazing Spiderman" class="youtube fancybox.iframe"><img src ="img/spiderman.jpg" /></a>
+                    <a href="http://www.youtube.com/embed/Pp9xuquibQc?autoplay=1" title="Chernobyl Diaries" class="youtube fancybox.iframe"><img src ="img/chernobyl.jpg" /></a>
                 </div>
             </div>
-            
+
             <?php
             $vendors = getAllVendors();
             // put your code here
             ?>
             <select name="vendors" id="vendors"></select>
         </div>
-        
+
         <div id="footer">
-            <p>Content created by Wayne Fields. // Managing Resources project - Spring 2013.</p>
+            <p>Content created by Wayne Fields. // Managing Resources project. // Spring 2013.</p>
         </div>
 
     </body>
