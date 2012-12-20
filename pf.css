@@ -6,14 +6,49 @@
         
 */
 
-body {
+
+
+body, h3 {
     font-family: "Rambla", sans-serif;
+    text-align: center;
 }
 
-#container {
+#dashboard {
+    width: 70px;
+    background-color: #0099CC;
+    padding: 20px 20px 0 20px;
+    position: absolute;
+    left: -92px;
+    z-index: 100;
+}
+
+#dashboard img {
+    margin-bottom: 20px;
+    border: 1px solid rgb(0,0,0);
+}
+
+#header {
+    text-align: left; 
     position: static;
     width: 800px; 
     margin: auto;
+}
+
+#container {
+    text-align: center;
+    position: static;
+    width: 800px; 
+    margin: auto;
+}
+
+#search {
+    border: 1px solid;
+    background-color: #ccc;
+    padding: 5px;
+    position: absolute;
+    margin: auto;
+    right: 232px;
+    top: 55px;
 }
 
 .rambia, div a, p, a { 
@@ -21,12 +56,12 @@ body {
 }
 
 .rambia2 {
-    font-size:125%;
+    text-align: center;
     border: 2px solid;
     border-color: black #444 #888 #ccc;
-    background-color:#A9D0F5;
-    height:1px;
-    padding:0px;   
+    height:85px;
+    padding:0px;
+    margin: auto;
 }
 
 h3 b {
@@ -34,20 +69,24 @@ h3 b {
     color:#cd0a0a;
 }
 
-th .title {  
-    text-align:center;
-    font-size:80%; 
-    font-weight:normal;
-}       
+.gallery img {
+        height: 150px;
+        width: 120px;
+	display: inline-block;
+        text-align: center;
+        margin: 0;
+	border: 0;
+        padding: 35px;
+}
+
+.solidblockmenu, .jqb_center, .rambia2, .gallery img {
+    margin-left:auto;
+    margin-right:auto;
+}
 
 li a { 
     font-family: "Rambla", sans-serif;
     font-size:120%;
-}
-
-table {
-    border: 2px solid;
-    border-color: black #444 #888 #ccc;
 }
 
 th {
@@ -55,70 +94,58 @@ th {
 }
 
 #footer {
-    clear: left;
+    position: absolute;
+    right: 0;
+    width:390px;
     background: #ccc;
 }
 
 #footer p {
-    font-size: 65%;
+    text-align: left;
+    
+    font-size: 75%;
     margin: 0;
 }
 
 /* Begin Solid block menu */
 .solidblockmenu{
-margin: 0;
-padding: 0;
-float: left;
-font: bold 13px Arial;
-width: 100%;
-overflow: hidden;
-margin-bottom: 1em;
-border: 1px solid #625e00;
-border-width: 0;
-background: black url(img/blockdefault.gif) center center repeat-x;
+    margin: 0;
+    padding: 0;
+    float: left;
+    font: bold 13px Rambia;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 1em;
+    border: 1px solid #625e00;
+    border-width: 0;
+    background: black url(img/blockdefault.gif) center center repeat-x;
 }
 
 .solidblockmenu li{
-display: inline;
+    display: inline;
 }
 
 .solidblockmenu li a{
-float: left;
-color: white;
-padding: 9px 11px;
-text-decoration: none;
+    float: left;
+    color: white;
+    padding: 9px 11px;
+    text-decoration: none;
 
 }
 
 .solidblockmenu li a:visited{
-color: white;
+    color: white;
 }
 
 .solidblockmenu li a:hover, .solidblockmenu li .current{
-color: white;
-background: transparent url(img/blockactive.gif) center center repeat-x;
+    color: white;
+    background: transparent url(img/blockactive.gif) center center repeat-x;
 }
 
 .right {
     float:right;
 }
 
-.class {
-    position: relative;
-}
-
-#submenu { 
-    width: 200px;
-    border: 1px solid black;
-    padding: 10px;
-    font-size: 10px;
-    background-color:rgb(195,151,51);
-    font-style: italic;
-    color: rgb(255,255,255);
-    position: absolute;
-    left: 300px;
-    top: 100px;
-}
 /* End Solid block menu */
 
 
