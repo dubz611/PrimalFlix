@@ -58,6 +58,10 @@ body, h3 {
     background-color: #F2F2F2;
 }
 
+#navigation {
+    z-index: 1;
+}
+
 #navigation ul, #navigation li {
 	margin: 0;
 	padding: 0;
@@ -66,7 +70,6 @@ body, h3 {
 #navigation a {
 	background-color: #0099CC;
 	text-decoration: none;
-        font-family: "Rambla", sans-serif;
 	font-size: 14px;
         text-align: left;
 	text-indent: 5px;
@@ -90,20 +93,20 @@ body, h3 {
     font-size:75%;
 }
 
-.under
-{
+.under {
     width: 83px; 
     height: 82px;
     position:absolute;
-    right:130px;
+    right:125px;
     top:25px;
     z-index:1;
 }
-.over
-{
+
+.over {
     position:absolute;
     right:133px;
     top:85px;
+    width: 190px;
     z-index:2;
     background-color: lightgrey;
     font-style: italic;
@@ -131,7 +134,7 @@ h3 b {
 }
 
 .jqb_center {
-    position: relative;
+    z-index: -1;
     margin-left: auto;
     margin-right: auto;
 }

@@ -66,7 +66,7 @@ invokeService($params);
             ); // end hover 
             }); // end function
         </script>
-        <script> // new releases covers
+        <script> // New releases covers
             $(function(){
                 $('.gallery img').mouseover(function() {
                     
@@ -77,7 +77,7 @@ invokeService($params);
                 }); // end mouseout
             }); // end ready
         </script>
-        <script> // search bar
+        <script> // Search bar
             $(function() {
                 $('.over').focus(function() {
                     $(this).val('');
@@ -122,14 +122,7 @@ invokeService($params);
         <div id="container">
             <div>
                 <ul id="navigation">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a>
-                        <ul>
-                            <li><a href="#">Our History</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="#">DVD</a>
                         <ul>
                             <li><a href="#">New Releases</a></li>
@@ -155,6 +148,13 @@ invokeService($params);
                         </ul>
                     </li>
                     <li><a href="#">Accessory</a></li>
+                    <li><a href="#">About Us</a>
+                        <ul>
+                            <li><a href="#">Our History</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Membership</a></li>
                     <li></li>
                     <li><a href="#">Sign-In</a></li>
