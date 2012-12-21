@@ -21,21 +21,23 @@ body, h3 {
 }
 
 #dashboard img {
+    width: 55px;
+    height: 55px;
     margin-bottom: 20px;
-    border: 1px solid rgb(0,0,0);
+    border: 0;
 }
 
 #header {
     text-align: left; 
     position: relative;
-    width: 800px; 
+    width: 1000px; 
     margin: auto;
 }
 
 #container {
     text-align: center;
     position: relative;
-    width: 800px; 
+    width: 1000px; 
     margin: auto;
 }
 
@@ -51,7 +53,37 @@ body, h3 {
 }
 
 #newreleases {
+    margin: auto;
+    width: 800px;
     background-color: #F2F2F2;
+}
+
+#navigation ul, #navigation li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#navigation a {
+	background-color: #0099CC;
+	text-decoration: none;
+        font-family: "Rambla", sans-serif;
+	font-size: 14px;
+        text-align: left;
+	text-indent: 5px;
+	color: white;
+}
+
+#navigation a:hover {
+	background-color: #555;
+	color: white;
+}
+
+#navigation ul .stack > a {
+	background-position: 97% -21px;
+}
+
+#navigation ul .stack > a:hover {
+	background-position: 97% -54px;
 }
 
 .rambia, div a, p, a { 
@@ -60,16 +92,18 @@ body, h3 {
 
 .under
 {
+    width: 83px; 
+    height: 82px;
     position:absolute;
-    right:200px;
-    top:5px;
+    right:130px;
+    top:25px;
     z-index:1;
 }
 .over
 {
     position:absolute;
-    right:232px;
-    top:65px;
+    right:133px;
+    top:85px;
     z-index:2;
     background-color: lightgrey;
     font-style: italic;
@@ -80,8 +114,7 @@ body, h3 {
     text-align: center;
     border: 0;
     height: 85px;
-    padding: 10px 0 0 0;
-    margin: auto;
+    padding: 20px 0 0 0;
 }
 
 h3 b {
@@ -93,11 +126,12 @@ h3 b {
     height: 150px;
     width: 115px;
     display: inline-block;
-    margin: 20px;
+    margin: 40px;
     
 }
 
-.solidblockmenu, .jqb_center {
+.jqb_center {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
 }
@@ -114,57 +148,15 @@ th {
 #footer {
     position: absolute;
     right: 0;
-    width:390px;
+    width: 380px;
     background: black;
 }
 
-#footer p {
-    
+#footer p {  
     color: white;
-    font-size: 75%;
+    font-size: 70%;
     margin: 0;
 }
-
-/* Begin Solid block menu */
-.solidblockmenu{
-    margin: 0;
-    padding: 0;
-    float: left;
-    font: bold 13px Rambia;
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 1em;
-    border: 1px solid #625e00;
-    border-width: 0;
-    background: black url(img/blockdefault.gif) center center repeat-x;
-}
-
-.solidblockmenu li{
-    display: inline;
-}
-
-.solidblockmenu li a{
-    float: left;
-    color: white;
-    padding: 9px 11px;
-    text-decoration: none;
-
-}
-
-.solidblockmenu li a:visited{
-    color: white;
-}
-
-.solidblockmenu li a:hover, .solidblockmenu li .current{
-    color: white;
-    background: transparent url(img/blockactive.gif) center center repeat-x;
-}
-
-.right {
-    float:right;
-}
-
-/* End Solid block menu */
 
 
 

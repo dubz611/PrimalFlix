@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="js/jquery-1.7.2.min.js"></script>
+        <script src="js/nav1.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rambla">
+        <style>
+#navigation ul, #navigation li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#navigation a {
+	background-color: #0099CC;
+	text-decoration: none;
+        font-family: "Rambla", sans-serif;
+	font-size: 14px;
+	text-indent: 5px;
+	margin: 0px;
+	padding: 0px;
+	color: white;
+}
+
+#navigation a:hover {
+	background-color: #555;
+	color: white;
+}
+
+#navigation ul .stack > a {
+	background-position: 97% -21px;
+}
+
+#navigation ul .stack > a:hover {
+	background-position: 97% -54px;
+}
+        </style>
+        
+        <script>
+            $(document).ready(function() {
+                $('#navigation').navPlugin({
+                    'itemWidth': 100,
+                    'itemHeight': 30,
+                    'navEffect' : 'slide',
+                    'speed' : 250
+                });
+            }); // end ready
+        </script>
+    </head>
+    <body>
+        <div>
+            <ul id="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a>
+                    <ul>
+                        <li><a href="#">Our History</a></li>
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">DVD</a>
+                    <ul>
+                        <li><a href="#">New Releases</a></li>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Suspense</a></li>
+                        <li><a href="#">Drama</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Blu-Ray</a>
+                    <ul>
+                        <li><a href="#">New Releases</a></li>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Suspense</a></li>
+                        <li><a href="#">Drama</a></li>
+                    </ul>  
+                </li>
+                <li><a href="#">Video Games</a>
+                    <ul>
+                        <li><a href="#">Xbox 360</a></li>
+                        <li><a href="#">Playstation 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Accessory</a></li>
+                <li><a href="#">Membership</a></li>
+                <li></li>
+                <li><a href="#">Sign-In</a></li>
+                <li><a href="#">Cart</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

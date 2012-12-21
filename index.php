@@ -27,8 +27,19 @@ invokeService($params);
         <link href="js/fancybox/jquery.fancybox.css?v=2.1.3" rel="stylesheet">
         <script src="js/fancybox/jquery.fancybox.js"></script>
         <link type="text/css" rel="stylesheet" href="pf.css" /> <!-- main css -->
+        <script src="js/nav1.1.min.js"></script>
         <script src="js/jquery.easing.1.3.js"></script>
         <script src="js/jquery.color.js"></script>
+        <script> // Navigation bar
+            $(function() {
+                $('#navigation').navPlugin({
+                    'itemWidth': 100,
+                    'itemHeight': 30,
+                    'navEffect' : 'slide',
+                    'speed' : 250
+                }); // end navigation bar
+            }); // end ready
+        </script>
         <script> // Side navigation
             $(function() {
                 $('#dashboard').hover(
@@ -48,7 +59,7 @@ invokeService($params);
                         left: '-92px',
                         backgroundColor: '#0099CC'
                     },
-                    1500,
+                    1000,
                     'easeOutBounce'
                 ); // end animate
                 }
@@ -79,44 +90,78 @@ invokeService($params);
             }); // end function  
         </script>  
         <script> // Youtube player
-        $(document).ready(function() {
-            $(".youtube").fancybox({
-                openEffect : 'fade',
-                closeEffect : 'fade',
-                padding : 0,
-                helpers : {
-                    overlay : {
-                        css : {'background' : '#0099CC'}
-                    } }
-            }); // fancybox
-        }); // end ready 
+            $(function() {
+                $(".youtube").fancybox({
+                    openEffect : 'fade',
+                    closeEffect : 'fade',
+                    padding : 0,
+                    helpers : {
+                        title : null,
+                        overlay : { 
+                            css : {'background' : '#0099CC'}
+                        } }
+                }); // fancybox
+            }); // end ready 
         </script>
     </head>
 
     <body>    
         <div id="dashboard">
-            <img src="img/blue_h.jpg" width="70" height="70" alt="blue">
-            <img src="img/green_h.jpg" width="70" height="70" alt="green">
-            <img src="img/orange_h.jpg" width="70" height="70" alt="orange">
-            <img src="img/purple_h.jpg" width="70" height="70" alt="purple">
-            <img src="img/red_h.jpg" width="70" height="70" alt="red">
+            <a href="http://www.twitter.com" ><img src="img/twitter_icon.png" alt="blue"></a>
+            <a href="http://www.facebook.com" ><img src="img/fb_icon.jpg" alt="green"></a>
+            <a href="http://www.myspace.com" ><img src="img/myspace_icon.png" alt="orange"></a>
+            <a href="http://www.pinterest.com" ><img src="img/pinterest_icon.png" alt="purple"></a>
+            <a href="http://www.foursquare.com" ><img src="img/foursquare_icon.jpg" alt="red"></a>
         </div>
-        <img src="../PrimalFlix/img/penguin1.jpg" width="83" height="82" class="under"/>
+        <img src="img/penguin1.jpg" class="under"/>
         <input type="text" name="search" value="Search..." class="over">
         <div id="header">
+            <br />
             <a href="index.php"><img src ="img/pflogo2.png" /></a></div>
+
         <div id="container">
-            <!-- Solid Block menu -->   
-            <ul class="solidblockmenu">
-                <li class="menu"><a href="index.php">HOME</a></li>
-                <li><a href="dvd_newrelease.html">DVD</a></li>
-                <li><a href="bray_newrelease.html">BLU-RAY</a></li>
-                <li><a href="games.html">VIDEO GAMES</a></li>
-                <li><a href="accessory.html">ACCESSORY</a></li>
-                <li><a href="membership.html">MEMBERSHIP</a></li>
-                <li class="right"><a href="shoppingcart.html">CART</a></li>
-                <li class="right"><a href="login.html">SIGN-IN</a></li>
-            </ul><br /><br />
+            <div>
+                <ul id="navigation">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a>
+                        <ul>
+                            <li><a href="#">Our History</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">DVD</a>
+                        <ul>
+                            <li><a href="#">New Releases</a></li>
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Comedy</a></li>
+                            <li><a href="#">Suspense</a></li>
+                            <li><a href="#">Drama</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Blu-Ray</a>
+                        <ul>
+                            <li><a href="#">New Releases</a></li>
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Comedy</a></li>
+                            <li><a href="#">Suspense</a></li>
+                            <li><a href="#">Drama</a></li>
+                        </ul>  
+                    </li>
+                    <li><a href="#">Video Games</a>
+                        <ul>
+                            <li><a href="#">Xbox 360</a></li>
+                            <li><a href="#">Playstation 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Accessory</a></li>
+                    <li><a href="#">Membership</a></li>
+                    <li></li>
+                    <li><a href="#">Sign-In</a></li>
+                    <li><a href="#">Cart</a></li>
+                </ul>
+            </div>
+            <br /><br />
             <div><h3><b>FREE SHIPPING</b> - on everything at PrimalFlix.com!</h3></div>
 
             <!-- JQuery Banner Slider (jqslider) -->
@@ -126,7 +171,7 @@ invokeService($params);
                     <div class="jqb_slide" title="Madagascar 3 - Now on Blu-Ray & DVD" ><a href="bray_newrelease.html"><img src="img/madag3_banner.jpg"/></a></div>
                     <div class="jqb_slide" title="PS3 - Long Live Play" ><a href="games.html"><img src="img/ps3banner.jpg"/></a></div>
                     <div class="jqb_slide" title="COD Black Ops 2 - Now Available"><a href="games.html"><img src="img/blackop2.jpg"/></a></div>
-                    <div class="jqb_slide" title="slide title"><a href="bray_newrelease.html"><img src="img/1.gif"/></a></div>
+                    <div class="jqb_slide" title=""><a href="membership.html"><img src="img/goldmember_banner.jpg"/></a></div>
                 </div>
                 <div class="jqb_bar">
                     <div class="jqb_info"></div>
@@ -135,12 +180,12 @@ invokeService($params);
                     <div id="btn_prev"      class="jqb_btn jqb_btn_prev"></div>
                 </div></div><br /><br />
 
-            <!-- Will be working with this plugin for DVD, Blu-Ray, & Video Games page -->
+            <!-- Will be working with this for DVD, Blu-Ray, & Video Games page -->
             <div id="newreleases">
                 <div class="newreleases_title"><img src ="img/newreleases.png"></div>
-                <div>Click on a movie to watch it's trailer!</div>
+                <div>(Click on any movie to watch it's trailer)</div>
                 <div class="gallery">
-                    <a href="http://www.youtube.com/embed/SlSWCnNRfeM?autoplay=1" class="youtube fancybox.iframe"><img src ="img/darkknight.jpg" /></a>
+                    <a href="http://www.youtube.com/embed/SlSWCnNRfeM?autoplay=1" title="The Dark Knight Rises" class="youtube fancybox.iframe"><img src ="img/darkknight.jpg" /></a>
                     <a href="http://www.youtube.com/embed/C05pGnZQQtE?autoplay=1" title="Madagascar 3" class="youtube fancybox.iframe"><img src ="img/madaga3.jpg" /></a>
                     <a href="http://www.youtube.com/embed/Pxzb3bHHu2Q?autoplay=1" title="The Expendables 2" class="youtube fancybox.iframe"><img src ="img/expend2.jpg" /></a>
                     <a href="http://www.youtube.com/embed/IyaFEBI_L24?autoplay=1" title="Men In Black 3" class="youtube fancybox.iframe"><img src ="img/mib3.jpg" /></a>   
