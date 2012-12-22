@@ -18,15 +18,13 @@ invokeService($params);
             } 
         </script>
         <script type='text/javascript' src='js/application.js'></script>
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
-        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-        <link rel="stylesheet" href="/resources/demos/style.css" /> 
-        <script src="jqbanner.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rambla">
         <link href="js/fancybox/jquery.fancybox.css?v=2.1.3" rel="stylesheet">
         <script src="js/fancybox/jquery.fancybox.js"></script>
-        <link type="text/css" rel="stylesheet" href="pf.css" /> <!-- main css -->
+        <link type="text/css" rel="stylesheet" href="pf.css" /> <!-- Main css -->
         <script src="js/nav1.1.min.js"></script>
+        <link href="js/anythingSlider/anythingslider.css" rel="stylesheet">
+        <script src="js/anythingSlider/jquery.anythingslider.min.js"></script>
         <script src="js/jquery.easing.1.3.js"></script>
         <script src="js/jquery.color.js"></script>
         <script> // Navigation bar
@@ -63,7 +61,7 @@ invokeService($params);
                 ); // end animate
                 }
             ); // end hover 
-            }); // end function
+            }); // end ready
         </script>
         <script> // New releases covers
             $(function(){
@@ -83,7 +81,7 @@ invokeService($params);
                     if (field.val()==field.attr('defaultValue'))
                         field.val('');
                 });
-            }); // end function
+            }); // end ready
         </script>
         <script> // Youtube player
             $(function() {
@@ -99,11 +97,29 @@ invokeService($params);
                 }); // fancybox
             }); // end ready 
         </script>
+        <script>
+            $(document).ready(function() {
+                $('#slider').anythingSlider( {
+                    buildArrows : false,
+                    autoPlay : true,
+                    buildStartStop : false,
+                    buildNavigation : false,
+                    delay : 7000
+                });
+            }); // end ready
+        </script>
     </head>
     <body> 
-        <div id="headerbg">
-            <img src="img/penguin1.jpg" class="under"/>
-            <input type="text" name="search" value="Search..." class="over">
+        <div id="dashboard">
+            <a href="http://www.twitter.com" ><img src="img/twitter_icon.png" alt="blue"></a>
+            <a href="http://www.facebook.com" ><img src="img/fb_icon.jpg" alt="green"></a>
+            <a href="http://www.myspace.com" ><img src="img/myspace_icon.png" alt="orange"></a>
+            <a href="http://www.pinterest.com" ><img src="img/pinterest_icon.png" alt="purple"></a>
+            <a href="http://www.foursquare.com" ><img src="img/foursquare_icon.jpg" alt="red"></a>
+        </div>
+        <div id="content">
+            <img src="img/penguin1.jpg" id="under"/>
+            <input type="text" name="search" value="Search..." id="over">
             <br />
             <a href="index.php"><img src ="img/pflogo2.png" id="mainlogo" /></a>     
             <div>
@@ -147,20 +163,24 @@ invokeService($params);
                     <li><a href="#">Cart</a></li>
                 </ul>
             </div><br />
-            <div id="freeshipping"><h1>Free Shipping on all items!</h1></div></div>
-
-        <div id="dashboard">
-            <a href="http://www.twitter.com" ><img src="img/twitter_icon.png" alt="blue"></a>
-            <a href="http://www.facebook.com" ><img src="img/fb_icon.jpg" alt="green"></a>
-            <a href="http://www.myspace.com" ><img src="img/myspace_icon.png" alt="orange"></a>
-            <a href="http://www.pinterest.com" ><img src="img/pinterest_icon.png" alt="purple"></a>
-            <a href="http://www.foursquare.com" ><img src="img/foursquare_icon.jpg" alt="red"></a>
-        </div>
-        <div id="container">
+            <div id="main_banner">
+                <div id="slider">
+                    <div>
+                        <a href="page1.html"><img src="img/1.gif" alt="1"></a>
+                    </div>
+                    <div>
+                        <a href="page2.html"><img src="img/ps3banner.jpg" alt="2"></a>
+                    </div>
+                    <div>
+                        <a href="page3.html"><img src="img/madag3_banner.jpg" alt="3"></a>
+                    </div>
+                </div>
+            </div>
             <div id="leftcolumn">
-                <div>
+                <div></div>
+                <div id="newreleases_area">
                     <div ><img src ="img/newreleases.png"></div>
-                    <div>(Click on any movie to watch it's trailer)</div>
+                    <span>Click on any movie to watch it's trailer</span>
                     <div class="gallery">
                         <a href="http://www.youtube.com/embed/SlSWCnNRfeM?autoplay=1" title="The Dark Knight Rises" class="youtube fancybox.iframe"><img src ="img/darkknight.jpg" /></a>
                         <a href="http://www.youtube.com/embed/C05pGnZQQtE?autoplay=1" title="Madagascar 3" class="youtube fancybox.iframe"><img src ="img/madaga3.jpg" /></a>
@@ -173,15 +193,18 @@ invokeService($params);
                         <a href="http://www.youtube.com/embed/CBIGWu0rAHI?autoplay=1" title="The Amazing Spiderman" class="youtube fancybox.iframe"><img src ="img/spiderman.jpg" /></a>
                         <a href="http://www.youtube.com/embed/Pp9xuquibQc?autoplay=1" title="Chernobyl Diaries" class="youtube fancybox.iframe"><img src ="img/chernobyl.jpg" /></a>
                     </div>
-                </div></div>
-
-            <div id="rightcolumn">Put news here!</div></div>
-
-        <?php
-        $vendors = getAllVendors();
-        // put your code here
-        ?>
-        <select name="vendors" id="vendors"></select>
+                </div>
+            </div>
+            <div id="rightcolumn">Begin next column here. Put news here!
+                <div>    
+                    <?php
+                    $vendors = getAllVendors();
+                    // put your code here
+                    ?>
+                    <select name="vendors" id="vendors"></select>
+                </div>
+            </div><div id="footer">Content created by Wayne Fields. // Managing Resources project. // Spring 2013.</div>
+        </div>
 
     </body>
 </html>

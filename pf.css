@@ -10,10 +10,23 @@ body {
     background: darkslategrey url('img/linen.jpg') no-repeat fixed center;
 }
 
-#headerbg {
+#slider img {
+    width : 700px;
+    height : 250px;
+}
+
+.gallery img {
+    height: 150px;
+    width: 115px;
+    display: inline-block;
+    margin: 20px;  
+}
+
+#content {
     background-color: white;
     width: 1000px;
     margin: auto;
+    box-shadow: 1px 1px 25px black;
 }
 
 #mainlogo {
@@ -37,7 +50,7 @@ body {
 }
 
 #leftcolumn {
-    background-color:#FFD700;
+    background-color: white;
     height:1000px;
     width:700px;
     float:left;
@@ -53,49 +66,26 @@ body {
     float:left;
 }
 
-#container {
-    width: 1000px;
-    margin: auto;    
-}
-
-#navigation ul, #navigation li {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-
-#navigation a {
-	background-color: #0099CC;
-	text-decoration: none;
-	font-size: 14px;
-        text-align: left;
-	text-indent: 5px;
-	color: white;
-}
-
-#navigation a:hover {
-	background-color: #555;
-	color: white;
-}
-
-#navigation ul .stack > a {
-	background-position: 97% -21px;
-}
-
-#navigation ul .stack > a:hover {
-	background-position: 97% -54px;
-}
-
-#freeshipping {
+#main_banner {
     text-align: center;
-    padding: 5px;
 }
 
-.rambia, div a, p, a { 
-    font-size:75%;
+#newreleases_area {
+    width: 640px;
+    border: none;
+    background-color: lightblue;
+    padding: 10px;
+    margin: auto;
+    box-shadow: 1px 1px 7px black;
+
 }
 
-.under {
+#newreleases_area span {
+    border: 1px dotted;
+    padding: 2px;
+}
+
+#under {
     width: 83px; 
     height: 82px;
     position:absolute;
@@ -104,7 +94,7 @@ body {
     z-index:1;
 }
 
-.over {
+#over {
     position:absolute;
     right:133px;
     top:85px;
@@ -115,34 +105,50 @@ body {
     z-index: 2;
 }
 
-#newscolumn {
-    background-color: #FFD700;
-    height:1000px;
-    width:283px;
-    position: absolute;
-    right: 135px;
+#footer {
+    background-color: #0099CC;
+    color: white;
+    text-align: right;
+    font-size: 80%;
+    font-style: normal;
+    width: 1000px;
 }
 
-h3 b {
-    font-size:150%; 
-    color:#cd0a0a;
+/* Start of Navigation bar */
+#navigation {
+    position: relative;
+    z-index: 1;
 }
 
-.gallery img {
-    height: 150px;
-    width: 115px;
-    display: inline-block;
-    margin: 10px;   
+#navigation ul, #navigation li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
-li a { 
-    font-family: "Rambla", sans-serif;
-    font-size: 120%;
+#navigation a {
+    background-color: #0099CC;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: left;
+    text-indent: 5px;
+    color: white;
 }
 
-th {
-    padding:40px;
+#navigation a:hover {
+    background-color: #555;
+    color: white;
 }
+
+#navigation ul .stack > a {
+    background-position: 97% -21px;
+}
+
+#navigation ul .stack > a:hover {
+    background-position: 97% -54px;
+}
+/* End of Navigation bar */
+
 
 
 
