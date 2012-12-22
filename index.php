@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <?php
 require_once 'service.php';
 $params = array_merge($_GET, $_POST);
 // Invoke the services module in case there's a service request
 invokeService($params);
 ?>
-<!DOCTYPE html>
 <html>
     <head>
         <link rel="icon" type="image/png" href="img/favicon.png">
@@ -22,7 +22,6 @@ invokeService($params);
         <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         <link rel="stylesheet" href="/resources/demos/style.css" /> 
         <script src="jqbanner.js" type="text/javascript"></script>
-        <link rel="stylesheet" type="text/css" media="screen" href="jqbanner.css" />
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rambla">
         <link href="js/fancybox/jquery.fancybox.css?v=2.1.3" rel="stylesheet">
         <script src="js/fancybox/jquery.fancybox.js"></script>
@@ -77,18 +76,15 @@ invokeService($params);
                 }); // end mouseout
             }); // end ready
         </script>
-        <script> // Search bar
+        <script>
             $(function() {
                 $('.over').focus(function() {
-                    $(this).val('');
-                    $(this).css('fontStyle','normal');
-                }); // end focus
-                $('.over').blur(function() {
-                    $(this).val('Search...');
-                    $(this).css('fontStyle','italic');
-                }); // end blur
-            }); // end function  
-        </script>  
+                    var field = $(this);
+                    if (field.val()==field.attr('defaultValue'))
+                        field.val('');
+                });
+            }); // end function
+        </script>
         <script> // Youtube player
             $(function() {
                 $(".youtube").fancybox({
@@ -104,22 +100,12 @@ invokeService($params);
             }); // end ready 
         </script>
     </head>
-
-    <body>    
-        <div id="dashboard">
-            <a href="http://www.twitter.com" ><img src="img/twitter_icon.png" alt="blue"></a>
-            <a href="http://www.facebook.com" ><img src="img/fb_icon.jpg" alt="green"></a>
-            <a href="http://www.myspace.com" ><img src="img/myspace_icon.png" alt="orange"></a>
-            <a href="http://www.pinterest.com" ><img src="img/pinterest_icon.png" alt="purple"></a>
-            <a href="http://www.foursquare.com" ><img src="img/foursquare_icon.jpg" alt="red"></a>
-        </div>
-        <img src="img/penguin1.jpg" class="under"/>
-        <input type="text" name="search" value="Search..." class="over">
-        <div id="header">
+    <body> 
+        <div id="headerbg">
+            <img src="img/penguin1.jpg" class="under"/>
+            <input type="text" name="search" value="Search..." class="over">
             <br />
-            <a href="index.php"><img src ="img/pflogo2.png" /></a></div>
-
-        <div id="container">
+            <a href="index.php"><img src ="img/pflogo2.png" id="mainlogo" /></a>     
             <div>
                 <ul id="navigation">
                     <li><a href="index.php">Home</a></li>
@@ -148,6 +134,7 @@ invokeService($params);
                         </ul>
                     </li>
                     <li><a href="#">Accessory</a></li>
+                    <li><a href="#">Membership</a></li>
                     <li><a href="#">About Us</a>
                         <ul>
                             <li><a href="#">Our History</a></li>
@@ -155,59 +142,45 @@ invokeService($params);
                             <li><a href="#">Careers</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Membership</a></li>
                     <li></li>
                     <li><a href="#">Sign-In</a></li>
                     <li><a href="#">Cart</a></li>
                 </ul>
-            </div>
-            <br /><br />
-            <div><h3><b>FREE SHIPPING</b> - on everything at PrimalFlix.com!</h3></div>
+            </div><br />
+            <div id="freeshipping"><h1>Free Shipping on all items!</h1></div></div>
 
-            <!-- JQuery Banner Slider (jqslider) -->
-            <div id="jqb_object" class="jqb_center">
-
-                <div class="jqb_slides">
-                    <div class="jqb_slide" title="Madagascar 3 - Now on Blu-Ray & DVD" ><a href="bray_newrelease.html"><img src="img/madag3_banner.jpg"/></a></div>
-                    <div class="jqb_slide" title="PS3 - Long Live Play" ><a href="games.html"><img src="img/ps3banner.jpg"/></a></div>
-                    <div class="jqb_slide" title="COD Black Ops 2 - Now Available"><a href="games.html"><img src="img/blackop2.jpg"/></a></div>
-                    <div class="jqb_slide" title=""><a href="membership.html"><img src="img/goldmember_banner.jpg"/></a></div>
-                </div>
-                <div class="jqb_bar">
-                    <div class="jqb_info"></div>
-                    <div id="btn_next"      class="jqb_btn jqb_btn_next"></div>
-                    <div id="btn_pauseplay" class="jqb_btn jqb_btn_pause"></div>
-                    <div id="btn_prev"      class="jqb_btn jqb_btn_prev"></div>
-                </div></div><br /><br />
-
-            <!-- Will be working with this for DVD, Blu-Ray, & Video Games page -->
-            <div id="newreleases">
-                <div class="newreleases_title"><img src ="img/newreleases.png"></div>
-                <div>(Click on any movie to watch it's trailer)</div>
-                <div class="gallery">
-                    <a href="http://www.youtube.com/embed/SlSWCnNRfeM?autoplay=1" title="The Dark Knight Rises" class="youtube fancybox.iframe"><img src ="img/darkknight.jpg" /></a>
-                    <a href="http://www.youtube.com/embed/C05pGnZQQtE?autoplay=1" title="Madagascar 3" class="youtube fancybox.iframe"><img src ="img/madaga3.jpg" /></a>
-                    <a href="http://www.youtube.com/embed/Pxzb3bHHu2Q?autoplay=1" title="The Expendables 2" class="youtube fancybox.iframe"><img src ="img/expend2.jpg" /></a>
-                    <a href="http://www.youtube.com/embed/IyaFEBI_L24?autoplay=1" title="Men In Black 3" class="youtube fancybox.iframe"><img src ="img/mib3.jpg" /></a>   
-                </div>   
-                <div class="gallery">
-                    <a href="http://www.youtube.com/embed/m_6ksxHBklo?autoplay=1" title="Safe" class="youtube fancybox.iframe"><img src ="img/safe.jpg" /></a>
-                    <a href="http://www.youtube.com/embed/sAsGhDMlZjQ?autoplay=1" title="Prometheus" class="youtube fancybox.iframe"><img src ="img/prometheus.jpg" /></a>
-                    <a href="http://www.youtube.com/embed/CBIGWu0rAHI?autoplay=1" title="The Amazing Spiderman" class="youtube fancybox.iframe"><img src ="img/spiderman.jpg" /></a>
-                    <a href="http://www.youtube.com/embed/Pp9xuquibQc?autoplay=1" title="Chernobyl Diaries" class="youtube fancybox.iframe"><img src ="img/chernobyl.jpg" /></a>
-                </div>
-            </div>
-
-            <?php
-            $vendors = getAllVendors();
-            // put your code here
-            ?>
-            <select name="vendors" id="vendors"></select>
+        <div id="dashboard">
+            <a href="http://www.twitter.com" ><img src="img/twitter_icon.png" alt="blue"></a>
+            <a href="http://www.facebook.com" ><img src="img/fb_icon.jpg" alt="green"></a>
+            <a href="http://www.myspace.com" ><img src="img/myspace_icon.png" alt="orange"></a>
+            <a href="http://www.pinterest.com" ><img src="img/pinterest_icon.png" alt="purple"></a>
+            <a href="http://www.foursquare.com" ><img src="img/foursquare_icon.jpg" alt="red"></a>
         </div>
+        <div id="container">
+            <div id="leftcolumn">
+                <div>
+                    <div ><img src ="img/newreleases.png"></div>
+                    <div>(Click on any movie to watch it's trailer)</div>
+                    <div class="gallery">
+                        <a href="http://www.youtube.com/embed/SlSWCnNRfeM?autoplay=1" title="The Dark Knight Rises" class="youtube fancybox.iframe"><img src ="img/darkknight.jpg" /></a>
+                        <a href="http://www.youtube.com/embed/C05pGnZQQtE?autoplay=1" title="Madagascar 3" class="youtube fancybox.iframe"><img src ="img/madaga3.jpg" /></a>
+                        <a href="http://www.youtube.com/embed/Pxzb3bHHu2Q?autoplay=1" title="The Expendables 2" class="youtube fancybox.iframe"><img src ="img/expend2.jpg" /></a>
+                        <a href="http://www.youtube.com/embed/IyaFEBI_L24?autoplay=1" title="Men In Black 3" class="youtube fancybox.iframe"><img src ="img/mib3.jpg" /></a>   
+                    </div>   
+                    <div class="gallery">
+                        <a href="http://www.youtube.com/embed/m_6ksxHBklo?autoplay=1" title="Safe" class="youtube fancybox.iframe"><img src ="img/safe.jpg" /></a>
+                        <a href="http://www.youtube.com/embed/sAsGhDMlZjQ?autoplay=1" title="Prometheus" class="youtube fancybox.iframe"><img src ="img/prometheus.jpg" /></a>
+                        <a href="http://www.youtube.com/embed/CBIGWu0rAHI?autoplay=1" title="The Amazing Spiderman" class="youtube fancybox.iframe"><img src ="img/spiderman.jpg" /></a>
+                        <a href="http://www.youtube.com/embed/Pp9xuquibQc?autoplay=1" title="Chernobyl Diaries" class="youtube fancybox.iframe"><img src ="img/chernobyl.jpg" /></a>
+                    </div>
+                </div></div>
 
-        <div id="footer">
-            <p>Content created by Wayne Fields. // Managing Resources project. // Spring 2013.</p>
-        </div>
+            <div id="rightcolumn">Put news here!</div></div>
 
+        <?php
+        $vendors = getAllVendors();
+        // put your code here
+        ?>
+        <select name="vendors" id="vendors"></select>
     </body>
 </html>
