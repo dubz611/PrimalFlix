@@ -98,15 +98,10 @@ invokeService($params);
             }); // end ready 
         </script>
         <script>
-            $(document).ready(function() {
-                $('#slider').anythingSlider( {
-                    buildArrows : false,
-                    autoPlay : true,
-                    buildStartStop : false,
-                    buildNavigation : false,
-                    delay : 7000
-                });
-            }); // end ready
+            $('.bxslider').bxSlider({
+                auto: true,
+                autoControls: true
+            });
         </script>
     </head>
     <body> 
@@ -164,17 +159,11 @@ invokeService($params);
                 </ul>
             </div><br />
             <div id="main_banner">
-                <div id="slider">
-                    <div>
-                        <a href="page1.html"><img src="img/1.gif" alt="1"></a>
-                    </div>
-                    <div>
-                        <a href="page2.html"><img src="img/ps3banner.jpg" alt="2"></a>
-                    </div>
-                    <div>
-                        <a href="page3.html"><img src="img/madag3_banner.jpg" alt="3"></a>
-                    </div>
-                </div>
+                <ul class="bxslider">
+                    <li><img src="/images/730_200/hill_trees.jpg" /></li>
+                    <li><img src="/images/730_200/me_trees.jpg" /></li>
+                    <li><img src="/images/730_200/houses.jpg" /></li>
+                </ul>
             </div>
             <div id="leftcolumn">
                 <div></div>

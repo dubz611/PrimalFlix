@@ -7,12 +7,7 @@
 
 body {
     font-family: "Rambla", sans-serif;
-    background: darkslategrey url('img/linen.jpg') no-repeat fixed center;
-}
-
-#slider img {
-    width : 700px;
-    height : 250px;
+    background: #424242 url('img/linen.jpg') no-repeat fixed center;
 }
 
 .gallery img {
@@ -29,7 +24,7 @@ body {
     box-shadow: 1px 1px 25px black;
 }
 
-#mainlogo {
+#mainLogo {
     margin-left: 10px;
 }
 
@@ -49,55 +44,64 @@ body {
     border: 0;
 }
 
-#leftcolumn {
+#leftColumn {
     background-color: white;
-    height:1000px;
-    width:700px;
-    float:left;
+    height: 1000px;
+    width: 700px;
+    float: left;
     text-align: center; 
     margin-left: 0;
     margin-right: 0;
 }
 
-#rightcolumn {
-    background-color:#EEEEEE;
-    height:1000px;
-    width:300px;
-    float:left;
+#rightColumn {
+    background-color: greenyellow;
+    height: 1000px;
+    width: 300px;
+    float: left;
 }
 
-#main_banner {
-    text-align: center;
+#mainBanner {
+    height: 280px ;   
+    width : 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
 }
 
-#newreleases_area {
+#coin-slider img {
+    height: 250px;
+    width: 700px;
+}
+
+#newReleasesArea {
     width: 640px;
     border: none;
     background-color: lightblue;
     padding: 10px;
     margin: auto;
     box-shadow: 1px 1px 7px black;
-
 }
 
-#newreleases_area span {
-    border: 1px dotted;
-    padding: 2px;
+#newReleasesArea span {
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 4px;
 }
 
 #under {
     width: 83px; 
     height: 82px;
     position:absolute;
-    right:135px;
-    top:25px;
-    z-index:1;
+    right: 135px;
+    top: 25px;
+    z-index: 1;
 }
 
 #over {
-    position:absolute;
-    right:133px;
-    top:85px;
+    position: absolute;
+    right: 133px;
+    top: 85px;
     width: 190px;
     background-color: lightgrey;
     font-style: italic;

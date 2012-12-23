@@ -23,8 +23,8 @@ invokeService($params);
         <script src="js/fancybox/jquery.fancybox.js"></script>
         <link type="text/css" rel="stylesheet" href="pf.css" /> <!-- Main CSS -->
         <script src="js/nav1.1.min.js"></script>
-        <link href="js/anythingSlider/anythingslider.css" rel="stylesheet">
-        <script src="js/anythingSlider/jquery.anythingslider.min.js"></script>
+        <script type="text/javascript" src="js/coinslider/coin-slider.min.js"></script>
+        <link rel="stylesheet" href="js/coinslider/coin-slider-styles.css" type="text/css" />
         <script src="js/jquery.easing.1.3.js"></script>
         <script src="js/jquery.color.js"></script>
         <script> // Navigation bar
@@ -37,17 +37,9 @@ invokeService($params);
                 }); // end navigation bar
             }); // end ready
         </script>
-        <script>
+        <script> // Content slider
             $(function() {
-                $('#slider').anythingSlider( {
-                    buildArrows : false,
-                    autoPlay : true,
-                    buildStartStop : false,
-                    buildNavigation : false,
-                    delay : 7000,
-                    resumeDelay : 7000,
-                    easing : "easeInOutBack"
-                }); // end anythingSlider
+                $('#coin-slider').coinslider({ width: 700, height: 250, delay: 5000 });
             }); // end ready
         </script>
         <script> // Side navigation
@@ -123,7 +115,7 @@ invokeService($params);
             <img src="img/penguin1.jpg" id="under"/>
             <input type="text" name="search" value="Search..." id="over">
             <br />
-            <a href="index.php"><img src ="img/pflogo2.png" id="mainlogo" /></a>     
+            <a href="index.php"><img id="mainLogo" src ="img/pflogo2.png" /></a>     
             <div>
                 <ul id="navigation">
                     <li><a href="index.php">Home</a></li>
@@ -165,22 +157,19 @@ invokeService($params);
                     <li><a href="#">Cart</a></li>
                 </ul>
             </div><br />
-            <div id="main_banner">
-                <div id="slider">
-                    <div>
-                        <a href="page1.html"><img src="img/1.gif" alt="1"></a>
-                    </div>
-                    <div>
-                        <a href="page2.html"><img src="img/ps3banner.jpg" alt="2"></a>
-                    </div>
-                    <div>
-                        <a href="page3.html"><img src="img/madag3_banner.jpg" alt="3"></a>
-                    </div>
+            <div id="mainBanner">
+                <div id='coin-slider'>
+                    <a href="#"><img src="img/madag3_banner.jpg" />
+                        <span>Madagascar 3 - Now on Blu-Ray & DVD</span></a>
+                    <a href="#"><img src="img/ps3banner.jpg" />
+                        <span>PS3 - Long Live Play</span></a>
+                    <a href="#"><img src="img/blackop2.jpg" />
+                        <span>Call of Duty: Black Ops 2 - Available Now</span></a>
                 </div>
             </div>
-            <div id="leftcolumn">
+            <div id="leftColumn">
                 <div></div>
-                <div id="newreleases_area">
+                <div id="newReleasesArea">
                     <div ><img src ="img/newreleases.png"></div>
                     <span>Click on any movie to watch it's trailer</span>
                     <div class="gallery">
@@ -197,7 +186,7 @@ invokeService($params);
                     </div>
                 </div>
             </div>
-            <div id="rightcolumn">Begin next column here. Put news here!
+            <div id="rightColumn">Begin next column here. Put news here!
                 <div>    
                     <?php
                     $vendors = getAllVendors();
