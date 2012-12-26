@@ -10,6 +10,11 @@ body {
     background: #424242 url('img/linen.jpg') no-repeat fixed center;
 }
 
+ul li {
+    list-style: none;
+    padding: 5px;
+}
+
 #json {
     font-size: 12px;
     width: 1000px;
