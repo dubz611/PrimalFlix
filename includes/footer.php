@@ -1,0 +1,1 @@
+<footer id="footer">Content created by Wayne Fields. // Managing Resources project. // Spring 2013.</footer>
