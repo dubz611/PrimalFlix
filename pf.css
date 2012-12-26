@@ -10,22 +10,50 @@ body {
     background: #424242 url('img/linen.jpg') no-repeat fixed center;
 }
 
+#json {
+    font-size: 12px;
+    width: 1000px;
+}
+
+#jDiv {
+    width: 550px;
+}
+
+#jSep {
+    margin: 2px;
+    border: 1px solid;
+}
+
 .gallery img {
     height: 150px;
     width: 115px;
     display: inline-block;
-    margin: 20px;  
+    margin: 20px;
+    box-shadow: 1px 1px 7px black;
 }
 
 #content {
     background-color: white;
     width: 1000px;
+    height: 1500px;
     margin: auto;
     box-shadow: 1px 1px 25px black;
 }
 
+#loginContent {
+    background-color: white;
+    width: 1000px;
+    margin: auto;
+    box-shadow: 1px 1px 25px black;  
+}
+
 #mainLogo {
     margin-left: 10px;
+}
+
+.qSeparator {
+    border-top: 1px solid #111;
+    border-bottom: 1px solid;
 }
 
 #dashboard {
@@ -44,6 +72,32 @@ body {
     border: 0;
 }
 
+#imgProfile {
+    float: left;
+}
+
+#imgProfile img {
+    height: 140px;
+    width: 115px;
+    margin: 20px;
+    box-shadow: 1px 1px 7px black;
+}
+
+#imgDescription {
+    float: left;
+    width: 500px;
+    padding: 0;
+    margin: 20px;
+}
+
+#regColumn {
+    background-color: lightblue;
+    height: 180px;
+    width: 1000px;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+}
+
 #leftColumn {
     background-color: white;
     height: 1000px;
@@ -55,10 +109,17 @@ body {
 }
 
 #rightColumn {
-    background-color: greenyellow;
+    background-color: white;
     height: 1000px;
     width: 300px;
     float: left;
+}
+
+.rightAds {
+    width: 280px;
+    height: 280px;
+    box-shadow: 1px 1px 7px black;
+    margin-bottom: 10px;
 }
 
 #mainBanner {
@@ -66,12 +127,14 @@ body {
     width : 700px;
     margin-left: auto;
     margin-right: auto;
-    padding: 15px;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 #coin-slider img {
     height: 250px;
     width: 700px;
+    margin: auto;
 }
 
 #newReleasesArea {
@@ -113,8 +176,12 @@ body {
     background-color: #0099CC;
     color: white;
     text-align: right;
-    font-size: 80%;
+    font-size: 12px;
     font-style: normal;
+}
+
+#footer p {
+    margin: auto;
     width: 1000px;
 }
 
@@ -152,7 +219,4 @@ body {
     background-position: 97% -54px;
 }
 /* End of Navigation bar */
-
-
-
 

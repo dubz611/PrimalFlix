@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
+        <link type="text/css" rel="stylesheet" href="pf.css" /> <!-- Main CSS -->
+    </head>
+    <body>
+
+        <!-- this UL will be populated with the data from the php array -->
+        <div id="content">
+            <div id="json"></div>
+        </div>
+        <script type='text/javascript'>
+            $(function(){
+                /* call the php that has the php array which is json_encoded */
+                $.getJSON('testPDO.php', function(data) {
+                    /* data will hold the php array as a javascript object */
+                    $.each(data, function(key, val) {
+                        $('#json').append('<div>' + 
+                            '<p>' + val.name +'</p>' +
+                            '<p>' + val.description + '</p>' +
+                            '<p>Rating: ' + val.rating  + '</p></div>');
+                    });
+                });
+
+            });
+        </script>
+
+    </body>
+</html>

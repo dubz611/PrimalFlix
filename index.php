@@ -39,7 +39,7 @@ invokeService($params);
         </script>
         <script> // Content slider
             $(function() {
-                $('#coin-slider').coinslider({ width: 700, height: 250, delay: 5000 });
+                $('#coin-slider').coinslider({ width: 700, height: 250, delay: 5000, effect: 'rain' });
             }); // end ready
         </script>
         <script> // Side navigation
@@ -112,50 +112,52 @@ invokeService($params);
             <a href="http://www.foursquare.com" ><img src="img/foursquare_icon.jpg" alt="red"></a>
         </div>
         <div id="content">
-            <img src="img/penguin1.jpg" id="under"/>
-            <input type="text" name="search" value="Search..." id="over">
-            <br />
-            <a href="index.php"><img id="mainLogo" src ="img/pflogo2.png" /></a>     
-            <div>
-                <ul id="navigation">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="#">DVD</a>
-                        <ul>
-                            <li><a href="#">New Releases</a></li>
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Comedy</a></li>
-                            <li><a href="#">Suspense</a></li>
-                            <li><a href="#">Drama</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Blu-Ray</a>
-                        <ul>
-                            <li><a href="#">New Releases</a></li>
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Comedy</a></li>
-                            <li><a href="#">Suspense</a></li>
-                            <li><a href="#">Drama</a></li>
-                        </ul>  
-                    </li>
-                    <li><a href="#">Video Games</a>
-                        <ul>
-                            <li><a href="#">Xbox 360</a></li>
-                            <li><a href="#">Playstation 3</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Accessory</a></li>
-                    <li><a href="#">Membership</a></li>
-                    <li><a href="#">About Us</a>
-                        <ul>
-                            <li><a href="#">Our History</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
-                    </li>
-                    <li></li>
-                    <li><a href="#">Sign-In</a></li>
-                    <li><a href="#">Cart</a></li>
-                </ul>
+            <div id="header">
+                <img src="img/penguin1.jpg" id="under"/>
+                <input type="text" name="search" value="Search..." id="over">
+                <br />
+                <a href="index.php"><img id="mainLogo" src ="img/pflogo2.png" /></a>     
+                <div>
+                    <ul id="navigation">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="#">DVD</a>
+                            <ul>
+                                <li><a href="#">New Releases</a></li>
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Comedy</a></li>
+                                <li><a href="#">Suspense</a></li>
+                                <li><a href="#">Drama</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Blu-Ray</a>
+                            <ul>
+                                <li><a href="#">New Releases</a></li>
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Comedy</a></li>
+                                <li><a href="#">Suspense</a></li>
+                                <li><a href="#">Drama</a></li>
+                            </ul>  
+                        </li>
+                        <li><a href="#">Video Games</a>
+                            <ul>
+                                <li><a href="#">Xbox 360</a></li>
+                                <li><a href="#">Playstation 3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Accessory</a></li>
+                        <li><a href="#">Membership</a></li>
+                        <li><a href="#">About Us</a>
+                            <ul>
+                                <li><a href="#">Our History</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                        </li>
+                        <li></li>
+                        <li><a href="#">Sign-In</a></li>
+                        <li><a href="#">Cart</a></li>
+                    </ul>
+                </div>
             </div><br />
             <div id="mainBanner">
                 <div id='coin-slider'>
@@ -186,7 +188,13 @@ invokeService($params);
                     </div>
                 </div>
             </div>
-            <div id="rightColumn">Begin next column here. Put news here!
+            <div id="rightColumn">
+                <div>
+                    <a href="#"><img class="rightAds" src="img/goldMember.jpg" /></a>
+                </div>
+                <div>
+                    <a href="#"><img class="rightAds" src="img/AquaTeen.jpg" /></a>
+                </div>
                 <div>    
                     <?php
                     $vendors = getAllVendors();
@@ -194,8 +202,10 @@ invokeService($params);
                     ?>
                     <select name="vendors" id="vendors"></select>
                 </div>
-            </div><div id="footer">Content created by Wayne Fields. // Managing Resources project. // Spring 2013.</div>
+            </div><footer id="footer">
+                <p>Content created by Wayne Fields. // Managing Resources project. // Spring 2013.</p>
+                <p>Movie information provided by Internet Movie Database (IMDB).</p>
+            </footer>
         </div>
-
     </body>
 </html>
