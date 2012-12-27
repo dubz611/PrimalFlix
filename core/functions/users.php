@@ -8,7 +8,7 @@
  * NOTE: user_id ~ Account.AccountNo
  */
 
-// Check if username exists
+// Checks if username exists
 function user_exists($username) {
     $username = sanitize($username);
     $query = mysql_query("SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `UserName` = '$username'");
@@ -16,10 +16,10 @@ function user_exists($username) {
     return(mysql_result($query, 0) == 1) ? true : false;
 }
 
-// Check if email exists
+// Checks if email exists
 function email_exists($email) {
-    $username = sanitize($email);
-    $query = mysql_query("SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `Email` = '$email'");
+    $email = sanitize($email);
+    $query = mysql_query("SELECT COUNT(`Email`) FROM `AccountDetail` WHERE `Email` = '$email'");
 
     return(mysql_result($query, 0) == 1) ? true : false;
 }
@@ -50,21 +50,21 @@ function login($username, $password) {
     return(mysql_result($query, 0) == 1) ? $user_id : false; // will return AccountNo 
 }
 
-// Obtained AccountNo from session
+// Obtain AccountNo from session
 function logged_in() {
     return(isset($_SESSION['user_id'])) ? true : false;
 }
 
-// Obtained user information after login
+// Obtain user information after login
 function user_data($user_id) {
     $data = array();
-    $user_id = (int) $user_id;
+    $user_id = (int)$user_id;
 
     $func_num_args = func_num_args();
     $func_get_args = func_get_args();
 
     if ($func_num_args > 1) {
-        unset($func_get_args[0]);
+        unset($func_get_args[0]); // Destroys first array
 
         $fields = '`' . implode('`, `', $func_get_args) . '`';
         $data = mysql_fetch_assoc(mysql_query("SELECT $fields FROM `Account` WHERE `AccountNo` = '$user_id'"));
@@ -73,6 +73,7 @@ function user_data($user_id) {
     }
 }
 
+// Obtain # of members active
 function user_count() {
     $query = mysql_query("SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `Active` = 1");
     return mysql_result($query, 0);
