@@ -136,6 +136,15 @@ ul li {
     padding-bottom: 10px;
 }
 
+#signBanner {
+    height: 500px ;   
+    width : 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
 #coin-slider img {
     height: 250px;
     width: 700px;
@@ -171,6 +180,18 @@ ul li {
     right: 133px;
     top: 85px;
     width: 190px;
+    background-color: lightgrey;
+    font-style: italic;
+    padding: 3px;
+    z-index: 2;
+}
+
+#loginStatus {
+    position: absolute;
+    right: 135px;
+    top: 30px;
+    width: 192px;
+    height: 75px;
     background-color: lightgrey;
     font-style: italic;
     padding: 3px;

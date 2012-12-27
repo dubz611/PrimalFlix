@@ -5,7 +5,6 @@
  * Created:     12/26/12
  * Author:      Wayne Fields
  */
-
 session_start();
 error_reporting(0); //remove error reporting to user.
 

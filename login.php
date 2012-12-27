@@ -21,7 +21,7 @@ if (empty($_POST) === false) {
         $errors[] = "You have not activated your account.";
     } else {
         $login = login($username, $password); // Create var 'login'
-        if($login === false) {
+        if ($login === false) {
             $errors[] = 'That username/password combination is incorrect';
         } else {
             // set the user session
@@ -31,6 +31,14 @@ if (empty($_POST) === false) {
             exit();
         }
     }
- print_r($login);
+} else {
+    $errors[] = "No data received.";
 }
+
+// IF any errors occurs...(handled in 'functions/general.php'
+include 'includes/overall/header.php';
+if (empty($errors) === false) {
+    echo output_errors($errors);
+}
+include 'includes/overall/footer.php';
 ?>
