@@ -1,7 +1,7 @@
 <div id="loginStatus">  
     <?php
     if (logged_in() === true)
-        include 'includes/widgets/login.php';
+        include 'includes/widgets/loggedin.php';
     ?>
 </div>
 <br />

@@ -10,7 +10,7 @@
             <div id="signBanner">
                 <?php
                 if (logged_in() === true) {
-                    echo 'Hello! Thanks for logging in!';
+                    include 'includes/widgets/loggedin.php';
                 } else {
                     include 'includes/loginForm.php';
                 }

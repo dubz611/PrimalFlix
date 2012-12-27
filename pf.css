@@ -187,13 +187,11 @@ ul li {
 }
 
 #loginStatus {
-    position: absolute;
-    right: 135px;
-    top: 30px;
-    width: 192px;
+    float: right;
+    width: 195px;
     height: 75px;
     background-color: lightgrey;
-    font-style: italic;
+    margin-top: 20px;
     padding: 3px;
     z-index: 2;
 }

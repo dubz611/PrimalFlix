@@ -40,5 +40,6 @@ include 'includes/overall/header.php';
 if (empty($errors) === false) {
     echo output_errors($errors);
 }
+
 include 'includes/overall/footer.php';
 ?>
