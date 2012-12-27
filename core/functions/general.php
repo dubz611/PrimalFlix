@@ -6,7 +6,7 @@
  * Author:      Wayne Fields
  */
 
-// Sanitize
+// Sanitize parameters from sql inject.
 function sanitize($data) {
     return mysql_real_escape_string($data);
  }
