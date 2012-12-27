@@ -14,6 +14,7 @@
                 } else {
                     include 'includes/loginForm.php';
                 }
+                include 'includes/widgets/user_count.php'
                 ?>
             </div>
             <?php include 'includes/footer.php'; ?>

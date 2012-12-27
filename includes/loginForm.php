@@ -1,5 +1,7 @@
-<h2>Login/Register</h2>
+
 <form action="login.php" method="post"> 
+    <fieldset>
+        <legend>Login/Register</legend>
     <ul>
         <li>
             Username:<br />
@@ -13,7 +15,9 @@
             <input type="submit" value="Log In">
         </li>
         <li>
-            <a href="register.php">Register</a>
+            Not a member yet? <a href="register.php">Sign Up!</a>
         </li>
     </ul>
+    </fieldset>
 </form>
+

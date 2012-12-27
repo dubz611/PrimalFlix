@@ -1,6 +1,6 @@
 <?php
 
-/* Process the user for log-in 
+/* Process/Validate user for log-in 
  * 
  * Created:     12/26/12
  * Author:      Wayne Fields
@@ -13,14 +13,16 @@ if (empty($_POST) === false) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if (empty($username) === true || empty($password) === true) {
-        $errors[] = 'You need to enter an username and password';
+    if (empty($username) === true) {
+        $errors[] = 'You need to enter an username';
+    } else if (empty($password) === true) {
+        $errors[] = 'You need to enter a password';
     } else if (user_exists($username) === false) {
         $errors[] = 'Username does not exist.';
     } else if (user_active($username) === false) {
         $errors[] = "You have not activated your account.";
     } else {
-        $login = login($username, $password); // Create var 'login'
+        $login = login($username, $password); // Create var 'login' and pass it to function
         if ($login === false) {
             $errors[] = 'That username/password combination is incorrect';
         } else {
@@ -35,11 +37,10 @@ if (empty($_POST) === false) {
     $errors[] = "No data received.";
 }
 
-// IF any errors occurs...(handled in 'functions/general.php'
+// IF any errors occurs...handled in 'functions/general.php'
 include 'includes/overall/header.php';
 if (empty($errors) === false) {
     echo output_errors($errors);
 }
-
 include 'includes/overall/footer.php';
 ?>

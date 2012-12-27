@@ -10,6 +10,11 @@ body {
     background: #424242 url('img/linen.jpg') no-repeat fixed center;
 }
 
+#aside {
+    font-size: 10px;
+    margin: none;
+}
+
 ul li {
     list-style: none;
     padding: 5px;
@@ -137,12 +142,16 @@ ul li {
 }
 
 #signBanner {
-    height: 500px ;   
-    width : 700px;
+    height: 350px ;   
+    width : 500px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 20px;
     padding-bottom: 10px;
+}
+
+#signBanner a {
+    padding-left: 3px;
 }
 
 #coin-slider img {
@@ -188,11 +197,10 @@ ul li {
 
 #loginStatus {
     float: right;
-    width: 195px;
+    width: 200px;
     height: 75px;
     background-color: lightgrey;
     margin-top: 20px;
-    padding: 3px;
     z-index: 2;
 }
 
