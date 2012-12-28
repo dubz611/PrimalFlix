@@ -6,9 +6,10 @@ Managing Resources Project - Spring 2013
 
 Current Status: Developing the registration form with communication to db server (12/28/12).
 
-<p>Log:</p>
-<p>(12/26/12) Issue with obtaining values from PHP array to use for JSON. #browsingSelection</p>
-<p>(12/28/12) Issue with redirecting user to "Registration success" after registration is completed. #registerSuccess</p>
+<ul>Log:
+<li>(12/26/12) Issue with obtaining values from PHP array to use for JSON. #browsingSelection</li>
+<li>(12/28/12) Issue with redirecting user to "Registration success" after registration is completed. #registerSuccess</li>
+</ul>
 
 Author: Wayne Fields
 
