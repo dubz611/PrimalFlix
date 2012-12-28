@@ -4,11 +4,11 @@ PrimalFlix E-commerce website
 Managing Resources Project - Spring 2013
 ----------------------------------------
 
-Current Status: Developing the registration form with communication to db server (12/28).
+Current Status: Developing the registration form with communication to db server (12/28/12).
 
-Log: 
-(12/26/12) Issue with obtaining values from PHP array to use for JSON. #browsingSelection
-(12/28/12) Issue with redirecting user to "Registration success" after registration is completed. #registerSuccess
+>Log: 
+>(12/26/12) Issue with obtaining values from PHP array to use for JSON. #browsingSelection
+>(12/28/12) Issue with redirecting user to "Registration success" after registration is completed. #registerSuccess
 
 Author: Wayne Fields
 
