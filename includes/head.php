@@ -110,15 +110,7 @@
                         my: 'left center'                               
                     },
                     hide: 'unfocus'
-                });
-            });
+                }); // end quick tip
+            }); // end ready
         </script>
-        <style> /* Remove when done */
-            #leftColumn {
-                background-color: lightskyblue;
-            }
-            #rightColumn {
-                background-color: greenyellow;
-            }
-        </style>
     </head>

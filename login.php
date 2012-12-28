@@ -1,6 +1,6 @@
 <?php
 
-/* Process/Validate user for log-in 
+/* Process/Validate POST data for log-in 
  * 
  * Created:     12/26/12
  * Author:      Wayne Fields
@@ -14,21 +14,21 @@ if (empty($_POST) === false) {
     $password = $_POST['password'];
 
     if (empty($username) === true) {
-        $errors[] = 'You need to enter an username';
+        $errors[] = 'You need to enter an username.';
     } else if (empty($password) === true) {
-        $errors[] = 'You need to enter a password';
+        $errors[] = 'You need to enter a password.';
     } else if (user_exists($username) === false) {
         $errors[] = 'Username does not exist.';
     } else if (user_active($username) === false) {
-        $errors[] = "You have not activated your account.";
+        $errors[] = 'You have not activated your account.';
     } else {
-        $login = login($username, $password); // Create var 'login' and pass it to function
+        $login = login($username, $password); // create var 'login' and pass it to function
         if ($login === false) {
-            $errors[] = 'That username/password combination is incorrect';
+            $errors[] = 'Username/password combination is incorrect.';
         } else {
             // set the user session
             // redirect user to home
-            $_SESSION['user_id'] = $login;
+            $_SESSION['user_id'] = $login; // pass AccountNo to _SESSION['user_id']
             header('Location: index.php');
             exit();
         }
@@ -41,6 +41,7 @@ if (empty($_POST) === false) {
 include 'includes/overall/header.php';
 if (empty($errors) === false) {
     echo output_errors($errors);
+    include 'includes/loginForm.php';
 }
 include 'includes/overall/footer.php';
 ?>

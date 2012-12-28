@@ -58,7 +58,7 @@ function logged_in() {
 // Obtain user information after login
 function user_data($user_id) {
     $data = array();
-    $user_id = (int)$user_id;
+    $user_id = (int) $user_id;
 
     $func_num_args = func_num_args();
     $func_get_args = func_get_args();
@@ -77,6 +77,17 @@ function user_data($user_id) {
 function user_count() {
     $query = mysql_query("SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `Active` = 1");
     return mysql_result($query, 0);
+}
+
+// Fetch POST data from registration
+function register_user($register_data) {
+    array_walk($register_data, 'array_sanitize');
+    $register_data['password'] = md5($register_data['password']);
+
+    $fields = '`' . implode('`, `', array_keys($register_data)) . '`';
+    $data = '\'' . implode('\',\'', $register_data) . '\'';
+
+    mysql_query("INSERT INTO `AccountDetail` ($fields) VALUES ($data)");
 }
 
 ?>

@@ -12,7 +12,6 @@ body {
 
 #aside {
     font-size: 10px;
-    margin: none;
 }
 
 fieldset {
@@ -84,6 +83,10 @@ ul li {
     height: 55px;
     margin-bottom: 20px;
     border: 0;
+}
+
+#err {
+    color: red;
 }
 
 #imgProfile {
