@@ -7,6 +7,7 @@
  */
 
 include 'core/init.php';
+logged_in_redirect();
 
 // Validate if user input fill out form completely
 if (empty($_POST) === false) {
@@ -66,7 +67,7 @@ if (empty($_POST) === false) {
                             'email' => $_POST['email'],
                         );
                         register_user($register_data);
-                        header('Location: index.php');
+                        header('Location: register.php?success');
                         exit();
                     } else if (empty($errors) === false) {
                         // Echo error messages to user
@@ -101,8 +102,8 @@ if (empty($_POST) === false) {
                     </form> 
                 </div>    
                 <?php
-                } 
-                include 'includes/footer.php';
+                }
+            include 'includes/footer.php';
             ?>
         </div>
     </body>

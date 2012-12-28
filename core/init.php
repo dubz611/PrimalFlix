@@ -18,7 +18,7 @@ $errors = array();
 
 if (logged_in() === true) {
     $session_user_id = $_SESSION['user_id'];
-    $user_data = user_data($session_user_id, 'accountno', 'username');
+    $user_data = user_data($session_user_id, 'accountno', 'username', 'password', 'email');
 
     // Log off user if account is inactive
     if (user_active($user_data['username']) === false) {
@@ -27,4 +27,6 @@ if (logged_in() === true) {
         exit();
     }
 }
+
+$userinfo = $user_data;
 ?>

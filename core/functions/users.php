@@ -67,7 +67,7 @@ function user_data($user_id) {
         unset($func_get_args[0]); // Destroys first array
 
         $fields = '`' . implode('`, `', $func_get_args) . '`';
-        $data = mysql_fetch_assoc(mysql_query("SELECT $fields FROM `Account` WHERE `AccountNo` = '$user_id'"));
+        $data = mysql_fetch_assoc(mysql_query("SELECT $fields FROM `Account` NATURAL JOIN `AccountDetail` WHERE `AccountNo` = '$user_id'"));
 
         return $data;
     }
@@ -88,6 +88,14 @@ function register_user($register_data) {
     $data = '\'' . implode('\',\'', $register_data) . '\'';
 
     mysql_query("INSERT INTO `AccountDetail` ($fields) VALUES ($data)");
+}
+
+// ...
+function change_password($username, $password) {
+    $username = sanitize($username);
+    $password = md5($password);
+
+    mysql_query("UPDATE `AccountDetail` SET `password` = '$password' WHERE `username` = '$username'");
 }
 
 ?>
