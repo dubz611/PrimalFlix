@@ -1,6 +1,6 @@
 <?php
 
-/* Log-in functions for login.php 
+/* User functions
  * 
  * Created:     12/26/12
  * Author:      Wayne Fields
@@ -50,7 +50,7 @@ function login($username, $password) {
     return(mysql_result($query, 0) == 1) ? $user_id : false; // will return AccountNo 
 }
 
-// Obtain AccountNo from session
+// Mark user as logged in
 function logged_in() {
     return(isset($_SESSION['user_id'])) ? true : false;
 }
@@ -67,7 +67,8 @@ function user_data($user_id) {
         unset($func_get_args[0]); // Destroys first array
 
         $fields = '`' . implode('`, `', $func_get_args) . '`';
-        $data = mysql_fetch_assoc(mysql_query("SELECT $fields FROM `Account` NATURAL JOIN `AccountDetail` WHERE `AccountNo` = '$user_id'"));
+        $query = mysql_query("SELECT $fields FROM `Account` NATURAL JOIN `AccountDetail` WHERE `AccountNo` = '$user_id'");
+        $data = mysql_fetch_assoc($query);
 
         return $data;
     }

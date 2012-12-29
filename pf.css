@@ -149,7 +149,8 @@ ul li {
 }
 
 #signBanner {   
-    width : 500px;
+    width: 500px;
+    height: 1000px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 20px;

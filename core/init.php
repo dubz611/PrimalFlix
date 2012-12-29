@@ -4,14 +4,16 @@
  * 
  * Created:     12/26/12
  * Author:      Wayne Fields
+ * 
+ * NOTE: Have error reporting to off later.
  */
 
 session_start();
-error_reporting(0); //remove error reporting to user.
+//error_reporting(0); //remove error reporting to user.
 
 require 'database/connect.php';
 require 'functions/general.php';
-require 'functions/users.php';
+require 'functions/users_functions.php';
 
 // Stores all error messages
 $errors = array();
