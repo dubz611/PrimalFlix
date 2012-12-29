@@ -1,6 +1,6 @@
 <?php
 
-/* Process/Validate POST data for log-in 
+/* Process/Validate POST data from signIn.php 
  * 
  * Created:     12/26/12
  * Author:      Wayne Fields
@@ -22,15 +22,15 @@ if (empty($_POST) === false) {
     } else if (user_active($username) === false) {
         $errors[] = 'You have not activated your account.';
     } else {
-        $login = login($username, $password); // create var 'login' and pass it to function
+        $login = login($username, $password); // pass accountNo to $login
         if ($login === false) {
             $errors[] = 'Username/password combination is incorrect.';
         } else {
             // set the user session
             // redirect user to home
-            $_SESSION['user_id'] = $login; // pass AccountNo to _SESSION['user_id']
+            $_SESSION['user_id'] = $login; // pass accountNo to _SESSION['user_id']
             header('Location: index.php');
-            exit();
+            exit(); // Login successful
         }
     }
 } else {

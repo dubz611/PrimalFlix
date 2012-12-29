@@ -102,7 +102,7 @@ if (empty($_POST) === false) {
                     </form> 
                 </div>    
                 <?php
-                }
+            }
             include 'includes/footer.php';
             ?>
         </div>
