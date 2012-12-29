@@ -1,3 +1,4 @@
 /nbproject/private/
 settings.ini
 /core/database/connectDB.php
+/core/database/connect.php
