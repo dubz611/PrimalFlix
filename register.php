@@ -28,10 +28,10 @@ if (empty($_POST) === false) {
             $errors[] = "Your username must not have any spaces.";
         }
         if (strlen($_POST['password']) < 6) {
-            $errors[] = "Your password must be at least six characters long.";
+            $errors[] = "Your password must be at least six characters.";
         }
         if (strlen($_POST['password']) > 15) {
-            $errors[] = "Your password must not exceed 15 characters long.";
+            $errors[] = "Your password must not exceed 15 characters.";
         }
         if ($_POST['password'] !== $_POST['password_again']) {
             $errors[] = "Both passwords does not match.";
@@ -83,7 +83,7 @@ if (empty($_POST) === false) {
                                     <input type="text" name="username">
                                 </li>
                                 <li>
-                                    Password (Must be 6-15 characters long)* :<br/>
+                                    Password (Must be 6-15 characters long)* : <br/>
                                     <input type="password" name="password">
                                 </li>
                                 <li>

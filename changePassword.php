@@ -7,6 +7,7 @@
  */
 
 include 'core/init.php';
+echo 
 protect_page();
 
 if (empty($_POST) === false) {
@@ -17,12 +18,14 @@ if (empty($_POST) === false) {
             break 1;
         }
     }
-    // Check and allow pw change
+    // pw validation
     if (md5($_POST['current_password']) === $user_data['password']) {
         if (trim($_POST['password']) !== trim($_POST['password_again'])) {
             $errors[] = "New passwords does not match.";
         } else if (strlen($_POST['password']) < 6) {
-            $errors[] = "Your new password must be at least six characters long.";
+            $errors[] = "Your new password must be at least six characters.";
+        } else if (strlen($_POST['password']) > 15) {
+            $errors[] = "Your new password must not exceed 15 characters.";
         }
     } else {
         $errors[] = "Your current password is incorrect.";
@@ -57,15 +60,15 @@ if (empty($_POST) === false) {
                             <legend>Change Password</legend>
                             <ul>
                                 <li>
-                                    Current Password*: <br />
+                                    Current password* : <br />
                                     <input type="password" name="current_password">
                                 </li>
                                 <li>
-                                    New password*: <br />
+                                    New password (Must be 6-15 characters long)* :<br/>
                                     <input type="password" name="password">
                                 </li>
                                 <li>
-                                    Re-type New password*: <br />
+                                    Retype New password* : <br />
                                     <input type="password" name="password_again">
                                 </li>
                                 <li>

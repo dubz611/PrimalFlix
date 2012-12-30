@@ -7,6 +7,7 @@
  */
 
 include 'core/init.php';
+logged_in_redirect();
 
 // Provide login session and error messages ($errors[]); functions are implemented from 'functions/users.php'
 if (empty($_POST) === false) {

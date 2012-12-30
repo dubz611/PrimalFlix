@@ -28,7 +28,7 @@ function protect_page() {
     }
 }
 
-// Protect pages from re-enter
+// Protect pages from re-entry
 function logged_in_redirect() {
     if(logged_in() === true) {
         header('Location: index.php');

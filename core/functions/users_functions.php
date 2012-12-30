@@ -1,6 +1,6 @@
 <?php
 
-/* User functions
+/* Login/Register functions
  * 
  * Created:     12/26/12
  * Author:      Wayne Fields
@@ -58,7 +58,7 @@ function logged_in() {
 // Obtain user information after login
 function user_data($user_id) {
     $data = array();
-    $user_id = (int) $user_id;
+    $user_id = (int)$user_id;
 
     $func_num_args = func_num_args();
     $func_get_args = func_get_args();
@@ -80,7 +80,7 @@ function user_count() {
     return mysql_result($query, 0);
 }
 
-// Fetch POST data from registration
+// Fetch POST data from register form & create new user
 function register_user($register_data) {
     array_walk($register_data, 'array_sanitize');
     $register_data['password'] = md5($register_data['password']);

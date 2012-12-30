@@ -6,8 +6,10 @@ Managing Resources Project - Spring 2013
 
 Current Status: Developing the registration form with communication to db server (12/28/12).
 
-<ul>Log:
-<li>(12/26/12) Issue with obtaining values from PHP array to use for JSON. #browsingSelection</li>
+Future plans: "add to cart" function, client-side user validation & registration (jQuery), mysql >> PDO extension for login/registration. 
+
+<ul>Bugs:
+<li>(12/26/12) Issue with obtaining values from PHP/DB array thru JSON call. #browsingSelection</li>
 <li>(12/28/12) Issue with redirecting user to "Registration success"/"Change password success" after submit. (Maybe should use Javascript to redirect?) #redirectFail</li>
 </ul>
 
