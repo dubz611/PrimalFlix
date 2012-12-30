@@ -5,7 +5,8 @@
  * Created:     12/26/12
  * Author:      Wayne Fields
  * 
- * NOTE: user_id ~ Account.AccountNo
+ * NOTE:    user_id ~ Account.AccountNo
+ *          Do not delete register_user1/2/3
  */
 
 // Checks if username exists
@@ -81,6 +82,7 @@ function user_count() {
 }
 
 // register_user1/2/3 Fetch POST data from register form & create new user
+// Update Address table
 function register_user1($register_data1) {
     array_walk($register_data1, 'array_sanitize');
 
@@ -91,6 +93,7 @@ function register_user1($register_data1) {
     return $query;
 }
 
+// Update UserDetail table
 function register_user2($register_data2) {
     array_walk($register_data2, 'array_sanitize');
 
@@ -102,19 +105,22 @@ function register_user2($register_data2) {
     return $query;
 }
 
+// Update AccountDetail table
 function register_user3($register_data3) {
     array_walk($register_data3, 'array_sanitize');
     $register_data3['password'] = md5($register_data3['password']);
+    
 
     $fields = '`' . implode('`, `', array_keys($register_data3)) . '`';
     $data = '\'' . implode('\',\'', $register_data3) . '\'';
     $active = 1;
-
+    
     $query = mysql_query("INSERT INTO `AccountDetail` ($fields, `Active`) VALUES ($data, $active)");
     return $query;
 }
 
-function register_transaction($register_data1, $register_data2, $register_data3) {
+// Begin input db info for account
+function register_account_begin($register_data1, $register_data2, $register_data3) {
     mysql_query("START TRANSACTION");
 
     $ru1 = register_user1($register_data1);
@@ -126,6 +132,15 @@ function register_transaction($register_data1, $register_data2, $register_data3)
     } else {
         mysql_query("ROLLBACK");
     }
+}
+
+// Finalize input db info for account
+function register_account_end($data) {
+    
+    $user = mysql_result(mysql_query("SELECT MAX(`UserDetailNo`) from `UserDetail`"), 0);
+    $username = $data;
+    
+    mysql_query("INSERT INTO `Account` (`UserDetailNo`, `Username`) VALUES ($user, '$username')");
 }
 
 // ...

@@ -5,7 +5,6 @@
  * Author:      Wayne Fields
  * 
  */
-
 include 'core/init.php';
 logged_in_redirect();
 
@@ -65,7 +64,7 @@ if (empty($_POST) === false) {
                         'state' => $_POST['state'],
                         'zipcode' => $_POST['zipcode'],
                         'country' => $_POST['country'],
-                    );
+                    );              
                     $register_data2 = array(
                         'firstname' => $_POST['firstname'],
                         'lastname' => $_POST['lastname'],
@@ -78,7 +77,8 @@ if (empty($_POST) === false) {
                         'password' => $_POST['password'],
                         'email' => $_POST['email'],
                     );
-                    register_transaction($register_data1, $register_data2, $register_data3);    
+                    register_account_begin($register_data1, $register_data2, $register_data3);
+                    register_account_end($_POST['username']);
                     exit();
                 } else if (empty($errors) === false) {
                     // Echo error messages to user
