@@ -58,7 +58,7 @@ function logged_in() {
 // Obtain user information after login
 function user_data($user_id) {
     $data = array();
-    $user_id = (int)$user_id;
+    $user_id = (int) $user_id;
 
     $func_num_args = func_num_args();
     $func_get_args = func_get_args();
@@ -80,15 +80,52 @@ function user_count() {
     return mysql_result($query, 0);
 }
 
-// Fetch POST data from register form & create new user
-function register_user($register_data) {
-    array_walk($register_data, 'array_sanitize');
-    $register_data['password'] = md5($register_data['password']);
+// register_user1/2/3 Fetch POST data from register form & create new user
+function register_user1($register_data1) {
+    array_walk($register_data1, 'array_sanitize');
 
-    $fields = '`' . implode('`, `', array_keys($register_data)) . '`';
-    $data = '\'' . implode('\',\'', $register_data) . '\'';
+    $fields = '`' . implode('`, `', array_keys($register_data1)) . '`';
+    $data = '\'' . implode('\',\'', $register_data1) . '\'';
 
-    mysql_query("INSERT INTO `AccountDetail` ($fields) VALUES ($data)");
+    $query = mysql_query("INSERT INTO `Address` ($fields) VALUES ($data)");
+    return $query;
+}
+
+function register_user2($register_data2) {
+    array_walk($register_data2, 'array_sanitize');
+
+    $fields = '`' . implode('`, `', array_keys($register_data2)) . '`';
+    $data = '\'' . implode('\',\'', $register_data2) . '\'';
+
+    $last_insert = mysql_result(mysql_query("SELECT LAST_INSERT_ID()"), 0);
+    $query = mysql_query("INSERT INTO `UserDetail` ($fields, `AddressNo`) VALUES ($data, '$last_insert')");
+    return $query;
+}
+
+function register_user3($register_data3) {
+    array_walk($register_data3, 'array_sanitize');
+    $register_data3['password'] = md5($register_data3['password']);
+
+    $fields = '`' . implode('`, `', array_keys($register_data3)) . '`';
+    $data = '\'' . implode('\',\'', $register_data3) . '\'';
+    $active = 1;
+
+    $query = mysql_query("INSERT INTO `AccountDetail` ($fields, `Active`) VALUES ($data, $active)");
+    return $query;
+}
+
+function register_transaction($register_data1, $register_data2, $register_data3) {
+    mysql_query("START TRANSACTION");
+
+    $ru1 = register_user1($register_data1);
+    $ru2 = register_user2($register_data2);
+    $ru3 = register_user3($register_data3);
+
+    if (($ru1 && $ru2 && $ru3) == true) {
+        mysql_query("COMMIT");
+    } else {
+        mysql_query("ROLLBACK");
+    }
 }
 
 // ...

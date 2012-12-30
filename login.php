@@ -21,7 +21,7 @@ if (empty($_POST) === false) {
     } else if (user_exists($username) === false) {
         $errors[] = 'Username does not exist.';
     } else if (user_active($username) === false) {
-        $errors[] = 'You have not activated your account.';
+        $errors[] = 'Your account is inactive, please contact admin@primalflix.com for activation assistance.';
     } else {
         $login = login($username, $password); // pass accountNo to $login
         if ($login === false) {

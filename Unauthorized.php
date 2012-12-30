@@ -22,7 +22,7 @@ include 'core/init.php';
             <br />
             <div id="signBanner">
                 <h2>Sorry, you need to be sign in to access this page!</h2>
-                <p>Please sign in or register to access this page.
+                <p>Please sign in to access this page.
             </div>
             <?php include 'includes/footer.php'; ?>
         </div>

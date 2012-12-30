@@ -11,7 +11,8 @@ logged_in_redirect();
 
 // Validate if user input fill out form completely
 if (empty($_POST) === false) {
-    $required_fields = array('username', 'password', 'password_again', 'email');
+    $required_fields = array('username', 'password', 'password_again', 'email', 'firstname', 'lastname', 'phone', 'street', 'city', 'state',
+        'zipcode', 'country');
     foreach ($required_fields as $key) {
         if (empty($_POST["$key"]) === true) {
             $errors[] = 'Required fields are marked with an asterisk.';
@@ -56,53 +57,116 @@ if (empty($_POST) === false) {
             <br />
             <div id="signBanner">
                 <?php
-                if (isset($_GET['success']) && empty($_GET['success'])) {
-                    echo 'You have been registered successfully!';
-                } else {
-                    if (empty($_POST) === false && empty($errors) === true) {
-                        // Register user
-                        $register_data = array(
-                            'username' => $_POST['username'],
-                            'password' => $_POST['password'],
-                            'email' => $_POST['email'],
-                        );
-                        register_user($register_data);
-                        header('Location: register.php?success');
-                        exit();
-                    } else if (empty($errors) === false) {
-                        // Echo error messages to user
-                        echo output_errors($errors);
-                    }
-                    ?>
-                    <form action="" method="POST">
-                        <fieldset>
-                            <legend>Create an Account</legend>
-                            <ul>
-                                <li>
-                                    Username* :<br />
-                                    <input type="text" name="username">
-                                </li>
-                                <li>
-                                    Password (Must be 6-15 characters long)* : <br/>
-                                    <input type="password" name="password">
-                                </li>
-                                <li>
-                                    Retype Password* :<br />
-                                    <input type="password" name="password_again">
-                                </li>
-                                <li>
-                                    Email* :<br/>
-                                    <input type="text" name="email">
-                                </li>
-                                <li>
-                                    <input type="submit" value="Register">     
-                                </li>
-                            </ul>
-                        </fieldset>
-                    </form> 
-                </div>    
-                <?php
-            }
+                if (empty($_POST) === false && empty($errors) === true) {                
+                    $register_data1 = array(
+                        'street' => $_POST['street'],
+                        'street2' => $_POST['street2'],
+                        'city' => $_POST['city'],
+                        'state' => $_POST['state'],
+                        'zipcode' => $_POST['zipcode'],
+                        'country' => $_POST['country'],
+                    );
+                    $register_data2 = array(
+                        'firstname' => $_POST['firstname'],
+                        'lastname' => $_POST['lastname'],
+                        'phone' => $_POST['phone'],
+                        'phone2' => $_POST['phone2'],
+                        'fax' => $_POST['fax2'],
+                    );
+                    $register_data3 = array(
+                        'username' => $_POST['username'],
+                        'password' => $_POST['password'],
+                        'email' => $_POST['email'],
+                    );
+                    register_transaction($register_data1, $register_data2, $register_data3);    
+                    exit();
+                } else if (empty($errors) === false) {
+                    // Echo error messages to user
+                    echo output_errors($errors);
+                }
+                ?>
+                <form action="" method="POST">
+                    <fieldset>
+                        <legend>Create an Account</legend>
+                        <ul>
+                            <li>
+                                Username* :<br />
+                                <input type="text" name="username">
+                            </li>
+                            <li>
+                                Password (Must be 6-15 characters long)* : <br/>
+                                <input type="password" name="password">
+                            </li>
+                            <li>
+                                Retype Password* :<br />
+                                <input type="password" name="password_again">
+                            </li>
+                            <li>
+                                Email* :<br/>
+                                <input type="text" name="email">
+                            </li>                     
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Contact Information</legend>
+                        <ul>
+                            <li>First Name* :<br />
+                                <input type="text" name="firstname">
+                            </li>
+                            <li>Last Name* :<br />
+                                <input type="text" name="lastname">
+                            </li>                               
+                            <li>Phone* :<br />
+                                <input type="text" name="phone">
+                            </li>
+                            <li>
+                                Phone2 :<br />
+                                <input type="text" name="phone2">
+                            </li>
+                            <li>
+                                Fax :<br />
+                                <input type="text" name="fax">
+                            </li>                               
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <ul>
+                            <li>
+
+                            </li>
+                            <li>
+                                Street* :<br />
+                                <input type="text" name="street">
+                            </li>
+                            <li>
+                                Street2 :<br />
+                                <input type="text" name="street2">
+                            </li>
+                            <li>
+                                City* :<br />
+                                <input type="text" name="city">
+                            </li>
+                            <li>
+                                State* :<br />
+                                <input type="text" name="state">
+                            </li>
+                            <li>
+                                Zip Code* :<br />
+                                <input type="text" name="zipcode">
+                            </li>
+                            <li>
+                                Country* :<br />
+                                <input type="text" name="country">
+                            </li>
+                            <li>
+                                <input type="submit" value="Register">     
+                            </li>
+                        </ul>
+                    </fieldset>
+                </form> 
+            </div>    
+            <?php
             include 'includes/footer.php';
             ?>
         </div>

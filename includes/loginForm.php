@@ -12,7 +12,7 @@
             <input type="password" name="password">
         </li>
         <li>
-            <input type="submit" value="Log In">
+            <input type="submit" value="Sign In">
         </li>
         <li>
             Not a member yet? <a href="register.php">Sign Up!</a>
