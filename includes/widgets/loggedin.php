@@ -8,7 +8,10 @@
         <a href="change_password.php">Change password</a>
     </li>
     <li>
-        <a href="user_profile.php">Profile</a>
+        <a href="<?php echo $user_data['username'] ?>">Profile</a>
+    </li>
+    <li>
+        <a href="user_profile.php">Change Profile</a>
     </li>
 </ul>
 </div>

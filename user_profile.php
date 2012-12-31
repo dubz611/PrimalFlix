@@ -1,5 +1,6 @@
 <?php
-/* User profile
+
+/* User profile page
  * 
  * Created:     12/30/12
  * Author:      Wayne Fields
