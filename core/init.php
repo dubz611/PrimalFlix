@@ -21,7 +21,9 @@ $errors = array();
 // Provide user information throughout website if user is logged in
 if (logged_in() === true) {
     $session_user_id = $_SESSION['user_id'];
-    $user_data = user_data($session_user_id, 'accountno', 'username', 'password', 'email');
+    $user_data = user_data($session_user_id, 'accountno', 'username', 'password', 'email', 'userdetailno','firstname', 'lastname', 'phone', 'phone2', 'fax', 
+            'addressno', 'street', 'street2', 'city', 'state', 'zipcode', 'country');
+    
 
     // Log off user if account is deactivated/ban
     if (user_active($user_data['username']) === false) {

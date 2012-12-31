@@ -24,6 +24,12 @@ if (empty($_POST) === false) {
         if (user_exists($_POST['username']) === true) {
             $errors[] = "Sorry, username: " . $_POST['username'] . " is already taken. Please choose another username.";
         }
+        if (strlen($_POST['username']) < 6) {
+            $errors[] = "Your username must be at least six characters.";
+        }
+        if (strlen($_POST['username']) > 15) {
+            $errors[] = "Your username must not exceed 15 characters.";
+        }
         if (preg_match("/\\s/", $_POST['username']) == true) {
             $errors[] = "Your username must not have any spaces.";
         }
@@ -58,24 +64,24 @@ if (empty($_POST) === false) {
                 <?php
                 if (empty($_POST) === false && empty($errors) === true) {                
                     $register_data1 = array(
-                        'street' => $_POST['street'],
-                        'street2' => $_POST['street2'],
-                        'city' => $_POST['city'],
-                        'state' => $_POST['state'],
-                        'zipcode' => $_POST['zipcode'],
-                        'country' => $_POST['country'],
+                        'street'    => $_POST['street'],
+                        'street2'   => $_POST['street2'],
+                        'city'      => $_POST['city'],
+                        'state'     => $_POST['state'],
+                        'zipcode'   => $_POST['zipcode'],
+                        'country'   => $_POST['country'],
                     );              
                     $register_data2 = array(
                         'firstname' => $_POST['firstname'],
-                        'lastname' => $_POST['lastname'],
-                        'phone' => $_POST['phone'],
-                        'phone2' => $_POST['phone2'],
-                        'fax' => $_POST['fax2'],
+                        'lastname'  => $_POST['lastname'],
+                        'phone'     => $_POST['phone'],
+                        'phone2'    => $_POST['phone2'],
+                        'fax'       => $_POST['fax2'],
                     );
                     $register_data3 = array(
-                        'username' => $_POST['username'],
-                        'password' => $_POST['password'],
-                        'email' => $_POST['email'],
+                        'username'  => $_POST['username'],
+                        'password'  => $_POST['password'],
+                        'email'     => $_POST['email'],
                     );
                     register_account_begin($register_data1, $register_data2, $register_data3);
                     register_account_end($_POST['username']);
@@ -90,7 +96,7 @@ if (empty($_POST) === false) {
                         <legend>Create an Account</legend>
                         <ul>
                             <li>
-                                Username* :<br />
+                                Username (Must be 6-15 characters long)* :<br />
                                 <input type="text" name="username">
                             </li>
                             <li>
@@ -132,9 +138,6 @@ if (empty($_POST) === false) {
                     <fieldset>
                         <legend>Personal Information</legend>
                         <ul>
-                            <li>
-
-                            </li>
                             <li>
                                 Street* :<br />
                                 <input type="text" name="street">

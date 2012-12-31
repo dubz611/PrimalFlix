@@ -1,10 +1,11 @@
-<!DOCTYPE html>
 <?php
+include 'core/init.php';
 require_once 'service.php';
 $params = array_merge($_GET, $_POST);
 // Invoke the services module in case there's a service request
 invokeService($params);
 ?>
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="icon" type="image/png" href="img/favicon.png">
@@ -103,7 +104,7 @@ invokeService($params);
             }); // end ready 
         </script>
     </head>
-    <body> 
+    <body>        
         <div id="dashboard">
             <a href="http://www.twitter.com" ><img src="img/twitter_icon.png" alt="blue"></a>
             <a href="http://www.facebook.com" ><img src="img/fb_icon.jpg" alt="green"></a>
@@ -112,11 +113,9 @@ invokeService($params);
             <a href="http://www.foursquare.com" ><img src="img/foursquare_icon.jpg" alt="red"></a>
         </div>
         <div id="content">
-            <div id="header">
-                <img src="img/penguin1.jpg" id="under"/>
-                <input type="text" name="search" value="Search..." id="over">
+            <div id="header">                
                 <br />
-                <a href="index.php"><img id="mainLogo" src ="img/pflogo2.png" /></a>     
+                <a href="index.php"><img id="mainLogo" src ="img/pflogo2.png" /></a>               
                 <div>
                     <ul id="navigation">
                         <li><a href="index.php">Home</a></li>

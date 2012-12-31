@@ -15,7 +15,7 @@
             <input type="submit" value="Sign In">
         </li>
         <li>
-            Not a member yet? <a href="register.php">Sign Up!</a>
+            Not a member yet? <a href="register.php">Register!</a>
         </li>
     </ul>
     </fieldset>

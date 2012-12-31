@@ -68,7 +68,9 @@ function user_data($user_id) {
         unset($func_get_args[0]); // Destroys first array
 
         $fields = '`' . implode('`, `', $func_get_args) . '`';
-        $query = mysql_query("SELECT $fields FROM `Account` NATURAL JOIN `AccountDetail` WHERE `AccountNo` = '$user_id'");
+        //$query = mysql_query("SELECT $fields FROM `Account` NATURAL JOIN `AccountDetail` WHERE `AccountNo` = '$user_id'");
+        $query = mysql_query("SELECT $fields FROM `AccountDetail` NATURAL JOIN `Account` NATURAL JOIN `UserDetail` NATURAL JOIN `Address`
+                                WHERE `AccountNo` = '$user_id'");
         $data = mysql_fetch_assoc($query);
 
         return $data;
@@ -81,8 +83,8 @@ function user_count() {
     return mysql_result($query, 0);
 }
 
-// register_user1/2/3 Fetch POST data from register form & create new user
-// Update Address table
+// Register_user1/2/3 Fetch POST data from register form & create new user
+// 1. Update Address table
 function register_user1($register_data1) {
     array_walk($register_data1, 'array_sanitize');
 
@@ -93,7 +95,7 @@ function register_user1($register_data1) {
     return $query;
 }
 
-// Update UserDetail table
+// 2. Update UserDetail table
 function register_user2($register_data2) {
     array_walk($register_data2, 'array_sanitize');
 
@@ -105,21 +107,21 @@ function register_user2($register_data2) {
     return $query;
 }
 
-// Update AccountDetail table
+// 3. Update AccountDetail table
 function register_user3($register_data3) {
     array_walk($register_data3, 'array_sanitize');
     $register_data3['password'] = md5($register_data3['password']);
-    
+
 
     $fields = '`' . implode('`, `', array_keys($register_data3)) . '`';
     $data = '\'' . implode('\',\'', $register_data3) . '\'';
     $active = 1;
-    
+
     $query = mysql_query("INSERT INTO `AccountDetail` ($fields, `Active`) VALUES ($data, $active)");
     return $query;
 }
 
-// Begin input db info for account
+// Begin input db info for registration
 function register_account_begin($register_data1, $register_data2, $register_data3) {
     mysql_query("START TRANSACTION");
 
@@ -134,12 +136,12 @@ function register_account_begin($register_data1, $register_data2, $register_data
     }
 }
 
-// Finalize input db info for account
+// Finalize input db info for registration
 function register_account_end($data) {
-    
+
     $user = mysql_result(mysql_query("SELECT MAX(`UserDetailNo`) from `UserDetail`"), 0);
-    $username = $data;
-    
+    $username = sanitize($data);
+
     mysql_query("INSERT INTO `Account` (`UserDetailNo`, `Username`) VALUES ($user, '$username')");
 }
 
@@ -149,6 +151,44 @@ function change_password($username, $password) {
     $password = md5($password);
 
     mysql_query("UPDATE `AccountDetail` SET `password` = '$password' WHERE `username` = '$username'");
+}
+
+function update_user1($update_data1, $userDetailNo) {
+    $update = array();
+    array_walk($update_data1, 'array_sanitize');
+
+    foreach ($update_data1 as $field => $data) {
+        $update[] = '`' . $field . '`=\'' . $data . '\'';
+    }
+
+    $query = mysql_query("UPDATE `UserDetail` SET " . implode(', ', $update) . " WHERE `UserDetailNo` = $userDetailNo");
+    return $query;
+}
+
+function update_user2($update_data2, $userAddressNo) {
+    $update = array();
+    array_walk($update_data2, 'array_sanitize');
+
+    foreach ($update_data2 as $field => $data) {
+        $update[] = '`' . $field . '`=\'' . $data . '\'';
+    }
+
+    $query = mysql_query("UPDATE `Address` SET " . implode(', ', $update) . " WHERE `AddressNo` = $userAddressNo");
+    return $query;
+}
+
+function update_user_complete($update_data1, $update_data2, $update_data3, $userDetailNo, $userAddressNo, $userEmail) {
+    mysql_query("START TRANSACTION");
+
+    $up1 = update_user1($update_data1, $userDetailNo);
+    $up2 = update_user2($update_data2, $userAddressNo);
+    $up3 = mysql_query("UPDATE `AccountDetail` SET `Email` = '$update_data3' WHERE `Email` = '$userEmail'");
+
+    if (($up1 && $up2 && $up3) == true) {
+        mysql_query("COMMIT");
+    } else {
+        mysql_query("ROLLBACK");
+    }
 }
 
 ?>
