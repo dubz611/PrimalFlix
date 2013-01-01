@@ -12,13 +12,13 @@ include 'includes/overall/header.php';
 
 <?php
 if (isset($_GET['success']) && empty($_GET['success'])) {
-    echo "Please check your email pertaining your recovery information.";
+    echo "Thank you! Please check your email pertaining your recovery information.";
 } else {
     $mode_allowed = array('username', 'password');
     if (isset($_GET['mode']) === true && in_array($_GET['mode'], $mode_allowed) === true) {
         if (isset($_POST['email']) === true && empty($_POST['email']) === false) {
             if (email_exists($_POST['email']) === true) {
-                //  recover($_GET['mode'], $_POST['email']);
+                recover($_GET['mode'], $_POST['email']);
                 header('Location: recover.php?success');
                 exit();
             } else {

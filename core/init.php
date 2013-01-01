@@ -6,7 +6,7 @@
  * 
  * NOTE: Have error reporting on for testing purposes.
  */
-ob_start();
+ob_start(); // fix session header warning
 session_start();
 //error_reporting(0); //remove error reporting to user.
 
