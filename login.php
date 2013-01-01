@@ -1,6 +1,6 @@
 <?php
 
-/* Process/Validate POST data from signIn.php 
+/* Validate/Process POST data from signIn.php 
  * 
  * Created:     12/26/12
  * Author:      Wayne Fields
@@ -21,7 +21,7 @@ if (empty($_POST) === false) {
     } else if (user_exists($username) === false) {
         $errors[] = 'Username does not exist.';
     } else if (user_active($username) === false) {
-        $errors[] = 'Your account is inactive, please contact admin@primalflix.com for activation assistance.';
+        $errors[] = 'Your account is inactive, please contact "admin@primalflix.com" for assistance.';
     } else {
         $login = login($username, $password); // pass accountNo to $login
         if ($login === false) {
@@ -30,7 +30,7 @@ if (empty($_POST) === false) {
             // set the user session
             // redirect user to home
             $_SESSION['user_id'] = $login; // pass accountNo to _SESSION['user_id']
-            header('Location: index.php');
+            header('Location: signin.php');
             exit(); // Login successful
         }
     }

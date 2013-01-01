@@ -1,8 +1,8 @@
 PrimalFlix E-commerce website
 ==============================
 
-Managing Resources Project - Spring 2013
-----------------------------------------
+Managing Resources Project - Spring 2013 (USF)
+----------------------------------------------
 
 Current Status: Developing User profile page (12/30/12).
 
@@ -22,6 +22,6 @@ Summary: PrimalFlix is an E-commerce website which main purpose is to provide en
 
 The PrimalFlix website is composed of PHP, JavaScript/jQuery, CSS3, & HTML5.
 
-Feel free to contribute or download the files...
+Feel free to download the files. I request that you do not use this repo for any school-related projects as this repo's main purpose is school-related. Thank you.
 
 Special Thanks: James Jones, phpAcademy(phpacademy.org)

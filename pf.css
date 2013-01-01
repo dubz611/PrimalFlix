@@ -10,10 +10,6 @@ body {
     background: #424242 url('img/linen.jpg') no-repeat fixed center;
 }
 
-#aside {
-    font-size: 12px;
-}
-
 fieldset {
     margin-top: 10px;
 }
@@ -199,14 +195,6 @@ ul li {
     background-color: lightgrey;
     font-style: italic;
     padding: 3px;
-    z-index: 2;
-}
-
-#loginStatus {
-    float: right;
-    width: 200px;
-    height: 90px;
-    margin-top: 10px;
     z-index: 2;
 }
 

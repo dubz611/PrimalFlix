@@ -1,7 +1,7 @@
 
 <form action="login.php" method="post"> 
     <fieldset>
-        <legend>Login/Register</legend>
+        <legend>Sign-In/Register</legend>
     <ul>
         <li>
             Username:<br />
