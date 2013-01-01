@@ -67,8 +67,7 @@ function user_data($user_id) {
     if ($func_num_args > 1) {
         unset($func_get_args[0]); // Destroys first array
 
-        $fields = '`' . implode('`, `', $func_get_args) . '`';
-        //$query = mysql_query("SELECT $fields FROM `Account` NATURAL JOIN `AccountDetail` WHERE `AccountNo` = '$user_id'");
+        $fields = '`' . implode('`, `', $func_get_args) . '`';       
         $query = mysql_query("SELECT $fields FROM `AccountDetail` NATURAL JOIN `Account` NATURAL JOIN `UserDetail` NATURAL JOIN `Address`
                                 WHERE `AccountNo` = '$user_id'");
         $data = mysql_fetch_assoc($query);
@@ -178,7 +177,8 @@ function update_user2($update_data2, $userAddressNo) {
 }
 
 function update_user_complete($update_data1, $update_data2, $update_data3, $userDetailNo, $userAddressNo, $userEmail) {
-    mysql_query("START TRANSACTION");
+    $update_data3 = sanitize($update_data3);
+    mysql_query("START TRANSACTION");    
 
     $up1 = update_user1($update_data1, $userDetailNo);
     $up2 = update_user2($update_data2, $userAddressNo);

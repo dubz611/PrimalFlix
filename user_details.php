@@ -53,7 +53,8 @@ protect_page();
                         <?php
                     }
                 } else {
-                    echo "You are unauthorized to view this page.";                  
+                    header('Location: signin.php');
+                    exit();
                 }
                 ?>
             </div>

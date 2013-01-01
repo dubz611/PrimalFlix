@@ -1,5 +1,4 @@
 <?php
-
 /* main "hub" for include/require files 
  * 
  * Created:     12/26/12
@@ -7,7 +6,7 @@
  * 
  * NOTE: Have error reporting on for testing purposes.
  */
-
+ob_start();
 session_start();
 //error_reporting(0); //remove error reporting to user.
 
@@ -24,7 +23,6 @@ if (logged_in() === true) {
     $user_data = user_data($session_user_id, 'accountno', 'initialdate' , 'username', 'password', 'email', 'userdetailno','firstname', 'lastname', 'phone', 'phone2', 'fax', 
             'addressno', 'street', 'street2', 'city', 'state', 'zipcode', 'country');
     
-
     // Log off user if account is deactivated/ban
     if (user_active($user_data['username']) === false) {
         session_destroy();

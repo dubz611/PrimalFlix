@@ -51,7 +51,7 @@ if (empty($_POST) === false) {
                 } else {
                     if (empty($_POST) === false && empty($errors) === true) {
                         change_password($user_data['username'], $_POST['password']);
-                        header('Location: changePassword.php?success');
+                        header('Location: change_password.php?success');
                     } else if (empty($errors) === false) {
                         echo output_errors($errors);
                     }

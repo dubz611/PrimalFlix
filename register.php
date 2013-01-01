@@ -62,6 +62,9 @@ if (empty($_POST) === false) {
             <br />
             <div id="signBanner">
                 <?php
+                if (isset($_GET['success']) && empty ($_GET['success'])) {
+                    echo "You've been registered successfully!";
+                } else {
                 if (empty($_POST) === false && empty($errors) === true) {                
                     $register_data1 = array(
                         'street'    => $_POST['street'],
@@ -85,6 +88,7 @@ if (empty($_POST) === false) {
                     );
                     register_account_begin($register_data1, $register_data2, $register_data3);
                     register_account_end($_POST['username']);
+                    header('Location: register.php?success');
                     exit();
                 } else if (empty($errors) === false) {
                     // Echo error messages to user
@@ -170,6 +174,7 @@ if (empty($_POST) === false) {
                 </form> 
             </div>    
             <?php
+            }
             include 'includes/footer.php';
             ?>
         </div>

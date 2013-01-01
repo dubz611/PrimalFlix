@@ -8,11 +8,11 @@
 
 // Sanitize parameters from sql injection
 function sanitize($data) {
-    return mysql_real_escape_string($data);
+    return htmlentities(strip_tags(mysql_real_escape_string($data)));
 }
 
 function array_sanitize(&$data) {
-    $data = mysql_real_escape_string($data);
+    $data = htmlentities(strip_tags(mysql_real_escape_string($data))); // Return back the var ($data)
 }
 
 // Output friendly errors to user
