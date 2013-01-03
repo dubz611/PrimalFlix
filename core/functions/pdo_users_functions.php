@@ -1,6 +1,6 @@
 <?php
 
-/* Login/Register functions
+/* Login/Register functions - PDO VERSION
  * 
  * Created:     12/26/12
  * Author:      Wayne Fields
@@ -12,9 +12,13 @@
 // Checks if username exists
 function user_exists($username) {
     $username = sanitize($username);
-    $query = mysql_query("SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `UserName` = '$username'");
-
-    return(mysql_result($query, 0) == 1) ? true : false;
+    
+    $sql = "SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `UserName` = :username";
+    $s = $dbh->prepare($sql);
+    $s->bindvalue(':username', $username);
+    $s->execute();
+    
+    return $s == 1 ? true : false;
 }
 
 // Checks if email exists
@@ -226,3 +230,4 @@ function recover($mode, $email) {
 }
 
 ?>
+

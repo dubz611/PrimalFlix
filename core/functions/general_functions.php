@@ -12,7 +12,7 @@ function sanitize($data) {
 }
 
 function array_sanitize(&$data) {
-    $data = htmlentities(strip_tags(mysql_real_escape_string($data))); // Return back the var ($data)
+    $data = htmlentities(strip_tags(mysql_real_escape_string($data))); // Return back the array ($data)
 }
 
 // Output friendly errors to user

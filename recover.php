@@ -3,12 +3,13 @@
  * 
  * Created:     12/26/12
  * Author:      Wayne Fields
+ * 
+ * NOTE: Email function is not working
  */
 include 'core/init.php';
 logged_in_redirect();
 include 'includes/overall/header.php';
 ?>
-
 
 <?php
 if (isset($_GET['success']) && empty($_GET['success'])) {
@@ -17,12 +18,14 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
     $mode_allowed = array('username', 'password');
     if (isset($_GET['mode']) === true && in_array($_GET['mode'], $mode_allowed) === true) {
         if (isset($_POST['email']) === true && empty($_POST['email']) === false) {
-            if (email_exists($_POST['email']) === true) {
+            $user_phone = verify_phone($_POST['phone'], $_POST['email']);
+            if (email_exists($_POST['email']) === true && $user_phone == true) {
                 recover($_GET['mode'], $_POST['email']);
                 header('Location: recover.php?success');
                 exit();
             } else {
-                echo "Oops, we could not find this email!";
+                $errors[] = "Oops, we could not find this account!";
+                echo output_errors($errors);
             }
         }
         ?>
@@ -32,8 +35,12 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
                 <legend>Recover Account</legend>
                 <ul>
                     <li>
-                        Please enter your email address: <br />
+                        Please enter your Email: <br />
                         <input type="text" name="email">
+                    </li>
+                    <li>
+                        Please enter your Phone #: <br />
+                        <input type="text" name="phone">
                     </li>
                     <li>
                         <input type="submit" value="Submit">
