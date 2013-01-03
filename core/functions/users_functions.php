@@ -207,21 +207,24 @@ function update_user_complete($update_data1, $update_data2, $update_data3, $user
     }
 }
 
+function email($to, $subject, $body) {
+    mail($to, $subject, $body, 'From: admin@primalflix.com');
+}
+
 // Will need to get POSTFIX to work
 function recover($mode, $email) {
     $mode = sanitize($mode);
-    $email = sanitize($email);
 
     $user_data = user_data(user_id_from_email($email), 'firstname', 'username');
 
     if ($mode == 'username') {
         // Recover username
-        email($email, 'Your Primalflix username', "Hello " . $user_data['firstname'] . ", your PrimalFlix's username is: " . $user_data['username'] . ".");
+        email($email, "Your Primalflix username", "Hello " . $user_data['firstname'] . ", your PrimalFlix username is: " . $user_data['username'] . ".");
     } else if ($mode == 'password') {
         // Recover password
         $generated_password = substr(md5(rand(999, 999999)), 0, 8);
         change_password($user_data['username'], $generated_password);
-        email($email, 'Your Primalflix password recovery', "Hello " . $user_data['firstname'] . ", your new temporary PrimalFlix's password is: " . $generated_password . ".");
+        email($email, 'Your Primalflix password recovery', "Hello " . $user_data['firstname'] . ", your new temporary PrimalFlix password is: " . $generated_password . ".");
     }
 }
 

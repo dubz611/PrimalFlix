@@ -12,44 +12,60 @@
 // Checks if username exists
 function user_exists($username) {
     $username = sanitize($username);
-    
-    $sql = "SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `UserName` = :username";
+
+    $sql = "SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `UserName` = '$username'";
     $s = $dbh->prepare($sql);
-    $s->bindvalue(':username', $username);
     $s->execute();
-    
-    return $s == 1 ? true : false;
+    $row = $s->fetch();
+
+    return $row == 1 ? true : false;
 }
 
 // Checks if email exists
 function email_exists($email) {
     $email = sanitize($email);
-    $query = mysql_query("SELECT COUNT(`Email`) FROM `AccountDetail` WHERE `Email` = '$email'");
 
-    return(mysql_result($query, 0) == 1) ? true : false;
+    $sql = "SELECT COUNT(`Email`) FROM `AccountDetail` WHERE `Email` = '$email'";
+    $s = $dbh->prepare($sql);
+    $s->execute();
+    $row = $s->fetch();
+
+    return $row == 1 ? true : false;
 }
 
 // Checks if account is active
 function user_active($username) {
     $username = sanitize($username);
-    $query = mysql_query("SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `UserName` = '$username' AND `Active` = 1");
 
-    return(mysql_result($query, 0) == 1) ? true : false;
+    $sql = "SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `UserName` = '$username' AND `Active` = 1";
+    $s = $dbh->prepare($sql);
+    $s->execute();
+    $row = $s->fetch();
+
+    return $row == 1 ? true : false;
 }
 
 // Retrieve accountNo from userName logging in
 function user_id_from_username($username) {
     $username = sanitize($username);
-    $query = mysql_query("SELECT `AccountNo` FROM `Account` WHERE `UserName` = '$username'");
 
-    return mysql_result($query, 0, 'AccountNo');
+    $sql = "SELECT `AccountNo` FROM `Account` WHERE `UserName` = '$username'";
+    $s = $dbh->prepare($sql);
+    $s->execute();
+    $row = $s->fetch();
+
+    return $row;
 }
 
 function user_id_from_email($email) {
     $email = sanitize($email);
-    $query = mysql_query("SELECT `AccountNo` FROM `Account` NATURAL JOIN `AccountDetail` WHERE `Email` = '$email'");
 
-    return mysql_result($query, 0, 'AccountNo');
+    $sql = "SELECT `AccountNo` FROM `Account` NATURAL JOIN `AccountDetail` WHERE `Email` = '$email'";
+    $s = $dbh->prepare($sql);
+    $s->execute();
+    $row = $s->fetch();
+
+    return $row;
 }
 
 // Validate un/pw combination
@@ -57,9 +73,14 @@ function login($username, $password) {
     $user_id = user_id_from_username($username);
     $username = sanitize($username);
     $password = md5($password); // md5 hash to pw 
-    $query = mysql_query("SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `UserName` = '$username' AND `Password` = '$password'");
 
-    return(mysql_result($query, 0) == 1) ? $user_id : false; // will return AccountNo 
+    $sql = "SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `UserName` = '$username' AND `Password` = '$password'";
+    $s = $dbh->prepare($sql);
+    $s->execute();
+    $row = $s->fetch();
+
+    return $row == 1 ? $user_id : false;
+    //return(mysql_result($query, 0) == 1) ? $user_id : false; // will return AccountNo 
 }
 
 // Mark user as logged in
@@ -79,11 +100,13 @@ function user_data($user_id) {
         unset($func_get_args[0]); // Destroys first array
 
         $fields = '`' . implode('`, `', $func_get_args) . '`';
-        $query = mysql_query("SELECT $fields FROM `AccountDetail` NATURAL JOIN `Account` NATURAL JOIN `UserDetail` NATURAL JOIN `Address`
-                                WHERE `AccountNo` = '$user_id'");
-        $data = mysql_fetch_assoc($query);
+        $sql = "SELECT $fields FROM `AccountDetail` NATURAL JOIN `Account` NATURAL JOIN `UserDetail` NATURAL JOIN `Address`
+                                WHERE `AccountNo` = '$user_id'";
+        $s = $dbh->prepare($sql);
+        $s->execute();
+        $row = $s->fetch();
 
-        return $data;
+        return $row;
     }
 }
 
@@ -91,15 +114,23 @@ function verify_phone($phone, $email) {
     $phone = sanitize($phone);
     $email = sanitize($email);
 
-    $query = mysql_query("SELECT COUNT(`Phone`) FROM `UserDetail` NATURAL JOIN `Account` NATURAL JOIN `AccountDetail` WHERE `Email` = '$email' AND `Phone` = '$phone'");
+    $sql = "SELECT COUNT(`Phone`) FROM `UserDetail` NATURAL JOIN `Account` NATURAL JOIN `AccountDetail` WHERE `Email` = '$email' AND `Phone` = '$phone'";
+    $s = $dbh->prepare($sql);
+    $s->execute();
+    $row = $s->fetch();
 
-    return(mysql_result($query, 0) == 1) ? true : false;
+    return $row == 1 ? true : false;
 }
 
 // Obtain # of members active
 function user_count() {
-    $query = mysql_query("SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `Active` = 1");
-    return mysql_result($query, 0);
+
+    $sql = "SELECT COUNT(`UserName`) FROM `AccountDetail` WHERE `Active` = 1";
+    $s = $dbh->prepare($sql);
+    $s->execute();
+    $row = $s->fetch();
+
+    return $row;
 }
 
 // Register_user1/2/3 Fetch POST data from register form & create new user
@@ -110,8 +141,9 @@ function register_user1($register_data1) {
     $fields = '`' . implode('`, `', array_keys($register_data1)) . '`';
     $data = '\'' . implode('\',\'', $register_data1) . '\'';
 
-    $query = mysql_query("INSERT INTO `Address` ($fields) VALUES ($data)");
-    return $query;
+    $sql = "INSERT INTO `Address` ($fields) VALUES ($data)";
+    $s = $dbh->prepare($sql);
+    $s->execute();
 }
 
 // 2. Update UserDetail table
@@ -120,10 +152,12 @@ function register_user2($register_data2) {
 
     $fields = '`' . implode('`, `', array_keys($register_data2)) . '`';
     $data = '\'' . implode('\',\'', $register_data2) . '\'';
+    
+    $last_insert = $dbh->lastInsertId();
 
-    $last_insert = mysql_result(mysql_query("SELECT LAST_INSERT_ID()"), 0);
-    $query = mysql_query("INSERT INTO `UserDetail` ($fields, `AddressNo`) VALUES ($data, '$last_insert')");
-    return $query;
+    $sql = "INSERT INTO `UserDetail` ($fields, `AddressNo`) VALUES ($data, '$last_insert')";
+    $s = $dbh->prepare($sql);
+    $s->execute();
 }
 
 // 3. Update AccountDetail table
@@ -131,27 +165,29 @@ function register_user3($register_data3) {
     array_walk($register_data3, 'array_sanitize');
     $register_data3['password'] = md5($register_data3['password']);
 
-
     $fields = '`' . implode('`, `', array_keys($register_data3)) . '`';
     $data = '\'' . implode('\',\'', $register_data3) . '\'';
     $active = 1;
 
-    $query = mysql_query("INSERT INTO `AccountDetail` ($fields, `Active`) VALUES ($data, $active)");
-    return $query;
+    $sql = "INSERT INTO `AccountDetail` ($fields, `Active`) VALUES ($data, $active)";
+    $s = $dbh->prepare($sql);
+    $s->execute();
 }
 
 // Begin input db info for registration
 function register_account_begin($register_data1, $register_data2, $register_data3) {
-    mysql_query("START TRANSACTION");
+    
+    try {
+        $dbh->beginTransaction();
 
-    $ru1 = register_user1($register_data1);
-    $ru2 = register_user2($register_data2);
-    $ru3 = register_user3($register_data3);
+        register_user1($register_data1);
+        register_user2($register_data2);
+        register_user3($register_data3);
 
-    if (($ru1 && $ru2 && $ru3) == true) {
-        mysql_query("COMMIT");
-    } else {
-        mysql_query("ROLLBACK");
+        $dbh->commit();
+    } catch (PDOException $e) {
+
+        $dbh->rollback();
     }
 }
 
@@ -211,6 +247,10 @@ function update_user_complete($update_data1, $update_data2, $update_data3, $user
     }
 }
 
+function email($to, $subject, $body) {
+    mail($to, $subject, $body, 'From: Hello from admin@primalflix.com');
+}
+
 // Will need to get POSTFIX to work
 function recover($mode, $email) {
     $mode = sanitize($mode);
@@ -228,6 +268,5 @@ function recover($mode, $email) {
         email($email, 'Your Primalflix password recovery', "Hello " . $user_data['firstname'] . ", your new temporary PrimalFlix's password is: " . $generated_password . ".");
     }
 }
-
 ?>
 
