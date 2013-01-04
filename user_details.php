@@ -8,7 +8,7 @@
 
 include 'core/init.php';
 protect_page();
-echo $profile_data['phone'];
+
 ?>
 
 <!DOCTYPE html>

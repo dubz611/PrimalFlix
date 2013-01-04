@@ -11,8 +11,8 @@ session_start();
 //error_reporting(0); //remove error reporting to user.
 
 require 'database/connect.php';
-require 'functions/general_functions.php';
 require 'functions/users_functions.php';
+require 'functions/general_functions.php';
 
 //require 'database/pdo_connect.php';
 //require 'functions/pdo_users_functions.php';

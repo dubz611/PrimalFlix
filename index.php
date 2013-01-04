@@ -121,7 +121,7 @@ invokeService($params);
                         <li><a href="index.php">Home</a></li>
                         <li><a href="#">DVD</a>
                             <ul>
-                                <li><a href="#">New Releases</a></li>
+                                <li><a href="DVD.php">New Releases</a></li>
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Comedy</a></li>
                                 <li><a href="#">Suspense</a></li>

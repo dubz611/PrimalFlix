@@ -1,29 +1,113 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/* DVD page
+ * 
+ * Created:     1/3/13
+ * Author:      Wayne Fields
+ * 
+ * NOTE:    user_id ~ Account.AccountNo
+ *          Do not delete register_user1/2/3
  */
 
-/**
- * Description of DVD
- *
- * @author Weezy
- */
-
-require_once 'Connection.php';
-
-class DVD extends Connection {
-    public $DvdNo;
-    public $SKU;
-    public $Name;
-    public $Category;
-    public $Description;
-    public $InventoryNo;
-    
-    function __construct() {
-        parent::__construct();
-    }
-}
-// place code
+include 'core/init.php';
 ?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>PrimalFlix - DEVELOPMENT (Home Page)</title>
+        <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+        <script type='text/javascript'>
+            if (window.google && window.google.load) {
+                google.load('jquery', '1.6.1');
+                google.load('jqueryui', '1.8.13');
+            } 
+        </script>
+        <script type='text/javascript' src='js/application.js'></script>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rambla">         
+        <link type="text/css" rel="stylesheet" href="pf.css" /> <!-- Main CSS -->
+        <script src="js/nav1.1.min.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/jquery.color.js"></script>
+        <script> // Navigation bar
+            $(function() {
+                $('#navigation').navPlugin({
+                    'itemWidth': 100,
+                    'itemHeight': 30,
+                    'navEffect' : 'slide',
+                    'speed' : 250
+                }); // end navigation bar
+            }); // end ready
+        </script>
+        <script>
+            $(function() {
+                $('.over').focus(function() {
+                    var field = $(this);
+                    if (field.val()==field.attr('defaultValue'))
+                        field.val('');
+                });
+            }); // end ready
+        </script>
+        <style> /* Remove when done */
+            #leftColumn {
+                background-color: lightskyblue;
+            }
+            #rightColumn {
+                background-color: greenyellow;
+            }
+        </style>
+    </head>
+    <body> 
+        <div id="content">
+            <br />
+            <a href="index.php"><img id="mainLogo" class="tooltip" src ="img/pflogo2.png" title="rawrr!"/></a>     
+            <div>
+                <ul id="navigation">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="#">DVD</a>
+                        <ul>
+                            <li><a href="#">New Releases</a></li>
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Comedy</a></li>
+                            <li><a href="#">Suspense</a></li>
+                            <li><a href="#">Drama</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Blu-Ray</a>
+                        <ul>
+                            <li><a href="#">New Releases</a></li>
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Comedy</a></li>
+                            <li><a href="#">Suspense</a></li>
+                            <li><a href="#">Drama</a></li>
+                        </ul>  
+                    </li>
+                    <li><a href="#">Video Games</a>
+                        <ul>
+                            <li><a href="#">Xbox 360</a></li>
+                            <li><a href="#">Playstation 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Accessory</a></li>
+                    <li><a href="#">Membership</a></li>
+                    <li><a href="#">About Us</a>
+                        <ul>
+                            <li><a href="#">Our History</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li></li>                  
+                    <li><a href="signIn.php">Account</a></li>
+                    <li><a href="#">Cart</a></li>
+                </ul>
+            </div><br />
+            <div>
+                <?php include 'includes/widgets/dvd_browse.php' ?>          
+            </div>
+        </div>
+    </body>
+</html>
+
+

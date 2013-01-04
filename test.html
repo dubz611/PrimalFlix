@@ -1,3 +1,7 @@
+<?php
+include 'core/init.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,7 +51,6 @@
     </head>
     <body> 
         <div id="content">
-            <div id="loginStatus"> hello </div>
             <br />
             <a href="index.php"><img id="mainLogo" class="tooltip" src ="img/pflogo2.png" title="rawrr!"/></a>     
             <div>
@@ -92,25 +95,7 @@
                 </ul>
             </div><br />
             <div>
-                <div>
-                    <div id="json"></div>
-                    <script type='text/javascript'>
-                        $(function(){
-                            /* call the php that has the php array which is json_encoded */
-                            $.getJSON('testPDO.php', function(data) {
-                                /* data will hold the php array as a javascript object */
-                                $.each(data, function(key, val) {
-                                    $('#json').append('<div id="jSep"><div id="jDiv">' + 
-                                        '<p>' + val.name +'</p>' +
-                                        '<p>' + val.description + '</p>' +
-                                        '<p>Rating: ' + val.rating  + '</p></div></div>');
-                                    
-                                }); // end each
-                            }); // end ready
-
-                        });
-                    </script>
-                </div>
+               <?php include 'includes/widgets/dvd_browse.php' ?>          
             </div>
         </div>
     </body>

@@ -83,9 +83,28 @@ function user_data($user_id) {
     }
 }
 
+function digital_data($data) {
+    $data = array();
+    array_walk($data, 'array_sanitize');
+    
+    $func_num_args = func_num_args();
+    $func_get_args = func_get_args();
+
+    if ($func_num_args > 1) {
+        unset($func_get_args[0]); // Destroys first array
+
+        $fields = '`' . implode('`, `', $func_get_args) . '`';
+        $query = mysql_query("SELECT $fields FROM `AccountDetail` NATURAL JOIN `Account` NATURAL JOIN `UserDetail` NATURAL JOIN `Address`
+                                WHERE `AccountNo` = '$user_id'");
+        $data = mysql_fetch_assoc($query);
+
+        return $data;
+    }
+}
+
 function verify_phone($phone, $email) {
     $phone = sanitize($phone);
-    $email = sanitize($email);
+    //$email = sanitize($email);
 
     $query = mysql_query("SELECT COUNT(`Phone`) FROM `UserDetail` NATURAL JOIN `Account` NATURAL JOIN `AccountDetail` WHERE `Email` = '$email' AND `Phone` = '$phone'");
 
@@ -207,11 +226,6 @@ function update_user_complete($update_data1, $update_data2, $update_data3, $user
     }
 }
 
-function email($to, $subject, $body) {
-    mail($to, $subject, $body, 'From: admin@primalflix.com');
-}
-
-// Will need to get POSTFIX to work
 function recover($mode, $email) {
     $mode = sanitize($mode);
 
@@ -226,6 +240,10 @@ function recover($mode, $email) {
         change_password($user_data['username'], $generated_password);
         email($email, 'Your Primalflix password recovery', "Hello " . $user_data['firstname'] . ", your new temporary PrimalFlix password is: " . $generated_password . ".");
     }
+}
+
+function email($to, $subject, $body) {
+    mail($to, $subject, $body, 'From: admin@primalflix.com');
 }
 
 ?>
