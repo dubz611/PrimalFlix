@@ -14,8 +14,8 @@ require 'database/connect.php';
 require 'functions/users_functions.php';
 require 'functions/general_functions.php';
 
-//require 'database/pdo_connect.php';
-//require 'functions/pdo_users_functions.php';
+require 'core/database/pdo_connect.php';
+//require 'core/functions/pdo_users_functions.php';
 
 // Stores all error messages
 $errors = array();

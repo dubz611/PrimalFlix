@@ -4,9 +4,9 @@ PrimalFlix E-commerce website
 Managing Resources Project - Spring 2013 (USF)
 ----------------------------------------------
 
-Current Status: Developing User profile page (12/30/12).
+Current Status: Developing Browsing DVD page & mySQL >> PDO extension (1/3/13).
 
-Future plans: "add to cart" function, client-side user validation & registration (jQuery), email activation, mysql >> PDO extension for login/registration. 
+Future plans: "add to cart" function & cart page, client-side user validation & registration (jQuery), mysql >> PDO extension for login/registration. 
 
 <ul>Bugs/Issues:
 <li>(12/26/12) Obtaining values from PHP/DB array thru JSON call. #browsingSelection</li>

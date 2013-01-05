@@ -1,7 +1,7 @@
 <div>
     <ul id="navigation">
         <li><a href="index.php">Home</a></li>
-        <li><a href="#">DVD</a>
+        <li><a href="DVD.php">DVD</a>
             <ul>
                 <li><a href="DVD.php">New Releases</a></li>
                 <li><a href="#">Action</a></li>
