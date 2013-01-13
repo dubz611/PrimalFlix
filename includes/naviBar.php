@@ -36,6 +36,6 @@
         </li>
         <li></li>
         <li><a href="signIn.php">Account</a>
-        <li><a href="#">Cart</a></li>
+        <li><a href="cart.php">Cart</a></li>
     </ul>
 </div>

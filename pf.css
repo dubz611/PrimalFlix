@@ -21,6 +21,24 @@ legend {
     margin-top: 10px;
 }
 
+#cartItem {
+    padding: 30px;
+}
+
+td {
+    padding: 50px;
+}
+
+#qty {
+    text-align: right;
+    width: 15px;
+}
+
+#subTotal {
+    text-align: right;
+    width: 50px;
+}
+
 #formTitle {
     font-size: 23px;
     letter-spacing: 1.5px;
@@ -102,6 +120,7 @@ ul li {
 #loginContent {
     background-color: white;
     width: 1000px;
+    height: 1000px;
     margin: auto;
     box-shadow: 1px 1px 25px black;  
 }
