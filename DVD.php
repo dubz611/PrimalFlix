@@ -49,14 +49,6 @@ include 'core/init.php';
                 });
             }); // end ready
         </script>
-        <style> /* Remove when done */
-            #leftColumn {
-                background-color: lightskyblue;
-            }
-            #rightColumn {
-                background-color: greenyellow;
-            }
-        </style>
     </head>
     <body> 
         <div id="content">

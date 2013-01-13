@@ -32,7 +32,8 @@ protect_page();
                         $profile_data = user_data($user_id, 'accountno', 'username', 'firstname', 'lastname', 'email', 'initialdate', 'phone', 'phone2', 'fax', 'street', 'street2', 'city', 'state', 'zipcode', 'country');
                         ?>
                         <fieldset>
-                            <legend>General Information</legend>
+                            <br />
+                            <p id="formTitle">General Information</p>
                             <p>Username: <?php echo $profile_data['username']; ?></p>
                             <p>First Name: <?php echo $profile_data['firstname']; ?></p>
                             <p>Last Name: <?php echo $profile_data['lastname']; ?></p>
@@ -40,7 +41,8 @@ protect_page();
                             <p>Member Since: <?php echo $profile_data['initialdate']; ?></p>
                         </fieldset>
                         <fieldset>
-                            <legend>Additional Information</legend>
+                            <br />
+                            <p id="formTitle">Additional Information</p>
                             <p>Phone: <?php echo $profile_data['phone']; ?></p>
                             <p>Phone2: <?php echo $profile_data['phone2']; ?></p>
                             <p>Fax: <?php echo $profile_data['fax']; ?></p>

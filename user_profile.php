@@ -40,7 +40,7 @@ if (empty($_POST) === false) {
             <br />
             <div id="signBanner">
                 <?php
-                if (isset($_GET['success']) && empty ($_GET['success'])) {
+                if (isset($_GET['success']) && empty($_GET['success'])) {
                     echo "Your profile has been updated.";
                 } else {
                     if (empty($_POST) === false && empty($errors) === true) {
@@ -73,9 +73,11 @@ if (empty($_POST) === false) {
                     }
                     ?>
                     <form action="" method="POST">
-                        <fieldset>
-                            <legend>Contact Information</legend>
+                        <fieldset>                          
                             <ul>
+                                <li>
+                                    <div id="formTitle">Contact Information</div>
+                                </li>
                                 <li>First Name* :<br />
                                     <input type="text" name="firstname" value="<?php echo $user_data['firstname']; ?>">
                                 </li>
@@ -98,9 +100,11 @@ if (empty($_POST) === false) {
                                 </li>                               
                             </ul>
                         </fieldset>
-                        <fieldset>
-                            <legend>Personal Information</legend>
+                        <fieldset>                            
                             <ul>
+                                <li>
+                                    <div id="formTitle">Personal Information</div>
+                                </li>
                                 <li>
                                     Street* :<br />
                                     <input type="text" name="street" value="<?php echo $user_data['street']; ?>">

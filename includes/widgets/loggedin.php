@@ -1,7 +1,9 @@
 <div>
     <fieldset>
-        <legend><?php echo "" . $user_data['username'] . "'s Account"; ?></legend>
         <ul>
+            <li>
+                <div id="formTitle"><?php echo "" . $user_data['username'] . "'s Account"; ?></div>
+            </li>
             <li>
                 <a href="<?php echo $user_data['username'] ?>">Profile</a>
             </li>

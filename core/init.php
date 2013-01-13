@@ -8,6 +8,7 @@
  */
 ob_start(); // fix session header warning
 session_start();
+//session_destroy(); // reset session
 //error_reporting(0); //remove error reporting to user.
 
 require 'database/connect.php';

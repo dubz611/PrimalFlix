@@ -32,8 +32,13 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 
         <form action="" method="POST">
             <fieldset>
-                <legend>Recover Account</legend>
                 <ul>
+                    <li>
+                        <img id="recoverIcon" src="img/question.png">
+                    </li>
+                    <li>
+                        <div id="formTitle">Account Recovery</div> <br />                        
+                    </li>
                     <li>
                         Please enter your Email: <br />
                         <input type="text" name="email">

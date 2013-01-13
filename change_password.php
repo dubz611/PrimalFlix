@@ -1,5 +1,4 @@
 <?php
-
 /* Change Password form
  * 
  * Created:     12/28/12
@@ -8,7 +7,6 @@
  */
 
 include 'core/init.php';
-echo 
 protect_page();
 
 if (empty($_POST) === false) {
@@ -58,8 +56,10 @@ if (empty($_POST) === false) {
                     ?>
                     <form action="" method="POST">
                         <fieldset>
-                            <legend>Change Password</legend>
                             <ul>
+                                <li>
+                                    <div id="formTitle">Change Password</div>
+                                </li>
                                 <li>
                                     Current password* : <br />
                                     <input type="password" name="current_password">

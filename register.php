@@ -97,7 +97,6 @@ if (empty($_POST) === false) {
                 ?>
                 <form action="" method="POST">
                     <fieldset>
-                        <legend>Create an Account</legend>
                         <ul>
                             <li>
                                 Username (Must be 6-15 characters long)* :<br />
@@ -118,7 +117,6 @@ if (empty($_POST) === false) {
                         </ul>
                     </fieldset>
                     <fieldset>
-                        <legend>Contact Information</legend>
                         <ul>
                             <li>First Name* :<br />
                                 <input type="text" name="firstname">
@@ -140,7 +138,6 @@ if (empty($_POST) === false) {
                         </ul>
                     </fieldset>
                     <fieldset>
-                        <legend>Personal Information</legend>
                         <ul>
                             <li>
                                 Street* :<br />
