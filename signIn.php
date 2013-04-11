@@ -30,7 +30,7 @@ include 'core/init.php';
                 include 'includes/widgets/user_count.php';
                 ?>
             </div>
-            <?php include 'includes/footer.php'; ?>
+            
         </div>
     </body>
 </html>

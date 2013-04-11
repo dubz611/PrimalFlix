@@ -22,7 +22,7 @@ include 'core/init.php';
             <div>
                 <?php include 'includes/widgets/dvd_browse.php' ?>
             </div>
-            <?php include 'includes/footer.php'; ?>
+           
         </div>
     </body>
 </html>

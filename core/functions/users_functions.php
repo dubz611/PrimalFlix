@@ -86,7 +86,7 @@ function user_data($user_id) {
 function digital_data($data) {
     $data = array();
     array_walk($data, 'array_sanitize');
-    
+
     $func_num_args = func_num_args();
     $func_get_args = func_get_args();
 
@@ -171,12 +171,13 @@ function register_account_begin($register_data1, $register_data2, $register_data
 }
 
 // Finalize input db info for registration
-function register_account_end($data) {
+function register_account_end($data, $data2, $data3, $data4) {
 
     $user = mysql_result(mysql_query("SELECT MAX(`UserDetailNo`) from `UserDetail`"), 0);
     $username = sanitize($data);
 
     mysql_query("INSERT INTO `Account` (`UserDetailNo`, `Username`) VALUES ($user, '$username')");
+    email($data3, "PrimalFlix - Registration Successful!", "Hello " . $data2 . ", You have successfully registered your PrimalFlix account: " . $data4 . ".");                   
 }
 
 // ...

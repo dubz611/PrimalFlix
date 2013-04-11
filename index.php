@@ -119,9 +119,9 @@ invokeService($params);
                 <div>
                     <ul id="navigation">
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="#">DVD</a>
+                        <li><a href="dvd.php">DVD</a>
                             <ul>
-                                <li><a href="DVD.php">New Releases</a></li>
+                                <li><a href="dvd.php">New Releases</a></li>
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Comedy</a></li>
                                 <li><a href="#">Suspense</a></li>
@@ -154,7 +154,7 @@ invokeService($params);
                         </li>
                         <li></li>
                         <li><a href="signIn.php">Account</a></li>
-                        <li><a href="#">Cart</a></li>
+                        <li><a href="cart.php">Cart</a></li>
                     </ul>
                 </div>
             </div><br />
@@ -201,10 +201,7 @@ invokeService($params);
                     ?>
                     <select name="vendors" id="vendors"></select>
                 </div>
-            </div><footer id="footer">
-                <p>Content created by Wayne Fields. // Managing Resources project. // Spring 2013.</p>
-                <p>Movie information provided by Internet Movie Database (IMDB).</p>
-            </footer>
+            </div>
         </div>
     </body>
 </html>

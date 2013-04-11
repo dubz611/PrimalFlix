@@ -14,6 +14,9 @@
                 <a href="user_profile.php">Change Profile</a>
             </li>
             <li>
+                <a href="#">Purchase History</a>
+            </li>
+            <li>
                 <a href="signout.php">Sign out</a>
             </li>
         </ul>

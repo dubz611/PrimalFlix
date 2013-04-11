@@ -81,7 +81,7 @@ if (empty($_POST) === false) {
                 </div>
                 <?php
             }
-            include 'includes/footer.php';
+            
             ?>
         </div>
     </body>

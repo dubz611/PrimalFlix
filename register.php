@@ -87,7 +87,7 @@ if (empty($_POST) === false) {
                         'email'     => $_POST['email'],
                     );
                     register_account_begin($register_data1, $register_data2, $register_data3);
-                    register_account_end($_POST['username']);
+                    register_account_end($_POST['username'], $_POST['firstname'], $_POST['email'], $_POST['username']);
                     header('Location: register.php?success');
                     exit();
                 } else if (empty($errors) === false) {
