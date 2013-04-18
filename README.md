@@ -1,7 +1,4 @@
 PrimalFlix E-commerce website
-==============================
-
-Managing Resources Project - Spring 2013 (USF)
 ----------------------------------------------
 
 Current Status: mysql >> PDO extension for login/registration. (TBD)
@@ -15,13 +12,6 @@ Future plans: client-side user validation & registration (jQuery)
 <li><del>(12/31/12) Redirecting user to "Change profile" success after submit. #redirectNoLuck </del></li>
 </ul>
 
-Author: Wayne Fields
-
-Summary: PrimalFlix is an E-commerce website which main purpose is to provide entertainment such as DVDs, Blu-Rays, and Video games at unbelievably low prices.
- PrimalFlix also provides special memberships to its customers with great offers such as 30% to 50% off all items. 
-
-The PrimalFlix website is composed of PHP, JavaScript/jQuery, CSS3/HTML5.
-
-Feel free to download the files. I request that you do not use this repo for any school-related projects as this repo's main purpose is school-related. Thank you.
+PrimalFlix website is composed of PHP, JavaScript/jQuery, CSS3/HTML5.
 
 Special Thanks: James Jones, phpAcademy(phpacademy.org)

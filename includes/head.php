@@ -1,7 +1,7 @@
 <head>
     <link rel="icon" type="image/png" href="img/favicon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>PrimalFlix - DEVELOPMENT (Home Page)</title>
+    <title>PrimalFlix - DEVELOPMENT</title>
     <script type='text/javascript' src='https://www.google.com/jsapi'></script>
     <script type='text/javascript'>
         if (window.google && window.google.load) {

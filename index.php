@@ -172,7 +172,7 @@ invokeService($params);
                 <div></div>
                 <div id="newReleasesArea">
                     <div ><img src ="img/newreleases.png"></div>
-                    <span>Click on any movie to watch it's trailer</span>
+                    <span>Click on any movie to watch its trailer</span>
                     <div class="gallery">
                         <a href="http://www.youtube.com/embed/SlSWCnNRfeM?autoplay=1" title="The Dark Knight Rises" class="youtube fancybox.iframe"><img src ="img/darkknight.jpg" /></a>
                         <a href="http://www.youtube.com/embed/C05pGnZQQtE?autoplay=1" title="Madagascar 3" class="youtube fancybox.iframe"><img src ="img/madaga3.jpg" /></a>

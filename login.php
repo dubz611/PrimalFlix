@@ -9,7 +9,7 @@
 include 'core/init.php';
 logged_in_redirect();
 
-// Provide login session and error messages ($errors[]); functions are implemented from 'functions/users.php'
+// Provide login session and error messages ($errors[]); functions are implemented from 'functions/users_functions.php'
 if (empty($_POST) === false) {
     $username = $_POST['username'];
     $password = $_POST['password'];
